@@ -1,0 +1,75 @@
+<app-educacion-edit></app-educacion-edit>
+<app-deleteeducacion></app-deleteeducacion>
+
+<section id="educacion" class="recuadro">
+    <div class="container-fluid seccion">
+        <!---Titulo de seccion y BOTON AGREGAR------>
+        <div class="titulo-seccion">
+           <h2 class="titular">Educación</h2>
+           <app-boton-agregar></app-boton-agregar> 
+        </div>                
+        <!----BLOQUE EDUCATIVO----->
+        <article class="container bloque-educativo">
+            <div class="row">
+                <div class="col-1">
+                    <img class="imagen-logo" src="../../../assets/images/logoargentinaprograma.png" alt="">
+                </div>
+                <div class="container data-educacion col-10">
+                    <h3>Desarrollador Full Stack Jr.</h3>                    
+                    <span>(2021 - 2022)</span>
+                    <h4>Argentina Programa</h4>
+                    <p>#YO PROGRAMO</p>
+                </div>
+                <div class="col-1">
+                    <app-boton-editar data-bs-toggle="modal" data-bs-target="#editeducacion"></app-boton-editar>
+                    <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteeducacion"></app-boton-borrar>
+                </div>
+            </div>
+        </article>
+        <!----------------------------------------------------------------->
+        
+        
+        
+    
+        <!---------------------------------------------------------------->
+
+
+        <article class="container bloque-educativo">
+            <div class="row">
+                <div class="col-1">
+                    <img class="imagen-logo" src="../../../assets/images/unlp.jpg" alt="">
+                </div>
+                <div class="container data-educacion col-10">
+                    <h3>Ingeniería Electrónica</h3>                    
+                    <span>(2003 - 2005)</span>
+                    <h4>Universidad Nacional de La Plata</h4>
+                    <p>La Plata, Bs.As, Argentina. (Estudios no concluidos)</p>
+                </div>
+                <div class="col-1">
+                    <app-boton-editar></app-boton-editar>
+                    <app-boton-borrar></app-boton-borrar>
+                </div>
+            </div>
+        </article>
+        <!--------------------------------------------------------->
+        <article class="container bloque-educativo">
+            <div class="row">
+                <div class="col-1">
+                    <img class="imagen-logo" src="../../../assets/images/logoeetn1.jpg" alt="">
+                </div>
+                <div class="container data-educacion col-10">
+                    <h3>Técnico en Equipos e Instalaciones Electromecánicas</h3>                    
+                    <h6>(1997 - 2002)</h6>
+                    <h4>Escuela de Educación Técnica Nº1 Gral.Savio</h4>
+                    <p>Saladillo, Bs.As, Argentina.</p>
+                </div>
+                <div class="container col-1">
+                    <app-boton-editar></app-boton-editar>
+                    <app-boton-borrar></app-boton-borrar>
+                </div>
+            </div>
+        </article>       
+    </div>
+</section>
+
+

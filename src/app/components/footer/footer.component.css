@@ -1,0 +1,43 @@
+footer {
+    height:max-content;
+    background: black;
+    color: grey;
+    align-items: center;
+    padding: 7px;
+    justify-content: center;
+    border-bottom:1px solid red;
+    border-left:1px solid orange;
+    border-top:1px solid yellow;
+    border-right:1px solid green;
+}
+
+.up {    
+    display:block;
+    margin:0 auto;
+    text-align:center
+}
+
+.up fa-icon {
+    color: green;
+    font-size: 20px;
+    margin:0 auto;
+}
+
+.up fa-icon:hover {
+    color: yellow
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:5px;
+}
+
+.copyright {
+    margin:0 auto;
+}
+
+.copyright p {
+    margin:0 auto;
+}

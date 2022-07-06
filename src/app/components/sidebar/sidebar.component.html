@@ -1,0 +1,44 @@
+<aside>
+    <!--------BOTON OPEN SIDEBAR------>
+    <div class="btn-sidebar fixed-top">
+        <button class="boton-sidebar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><fa-icon [icon]="faBars"></fa-icon></button>    
+    </div>
+    <!--------SIDEBAR-------->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-dismiss="offcanvas" data-bs-backdrop="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel"><!---
+        <div class="offcanvas-header">
+            <img id="foto-sidebar" src="../../../assets/images/flor.jpg" alt="">--
+            <button type="button" data-bs-dismiss="offcanvas"><fa-icon [icon]="faBars"></fa-icon></button>-
+        </div>--->
+        <div class="offcanvas-body" id="barra-lateral">
+            <!------
+            <div>
+                <h5>Desarrollo WEB Full Stack Jr.</h5>
+                <h6>Santiago Castellani</h6>
+            </div>---->
+            <ul>
+                <li>
+                    <a href="#navegacion" id="tithome"><fa-icon [icon]="faHome" style="color:red"></fa-icon>inicio</a>
+                </li>
+                <li>
+                    <a href="#acerca-de">SOBRE MI<fa-icon [icon]="faSeedling"></fa-icon></a>
+                </li>
+                <li>
+                    <a href="#experiencia">EXPERIENCIA<fa-icon [icon]="faSplotch"></fa-icon></a>
+                </li>
+                <li>
+                    <a href="#educacion">EDUCACION<fa-icon [icon]="faBookOpen"></fa-icon></a>
+                </li>
+                <li>
+                    <a href="#proyectos">PROYECTOS<fa-icon [icon]="faLaptopCode"></fa-icon></a>
+                </li>
+                <li>
+                    <a href="#skills">HERRAMIENTAS<fa-icon [icon]="faCube"></fa-icon></a>
+                </li>
+                <li>
+                    <a href="#contacto">CONTACTO<fa-icon [icon]="faCommentAlt"></fa-icon></a>
+                </li>   
+            </ul>
+        </div>
+    </div>
+</aside>
+

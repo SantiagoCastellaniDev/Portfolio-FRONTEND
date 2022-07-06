@@ -1,0 +1,44 @@
+/*------------BANNER-----------*/
+#banner {
+  width:100%;
+  margin:0 auto;
+  padding:0 auto; 
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+}
+
+#cartel {
+  position:absolute;
+  z-index:10;
+  top:50%;
+  left:50%;
+  transform:
+  translate(-50%, -50%);
+  text-align:center
+}
+
+.lead-content h1, .lead-content h2{margin:0}
+
+.lead-content h1{color: yellow;font-weight:900;font-size:5em;text-transform:uppercase;letter-spacing:0.05em;line-height:0.9em; text-shadow: 3px 3px green}
+
+.lead-content h2{color: yellow; text-shadow: 3px 3px red;font-weight:500;font-size:2.25em;margin-bottom:15px}
+
+
+@media only screen and (max-width: 790px) {
+  .lead-content h1{font-size:3.3em}
+  .lead-content h2{font-size:2.3em}
+  .lead-content a{padding:10px 20px}
+}
+
+@media only screen and (max-width: 500px) {
+  .lead-content h1{font-size:2.5em}
+  .lead-content h2{font-size:1.7em}
+}
+
+@media only screen and (max-width: 400px) {
+  .lead-content h1{font-size:2em}
+  .lead-content h2{font-size:1.4em}
+}

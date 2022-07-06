@@ -1,0 +1,88 @@
+/*-----SKILLS------*/
+
+/*----Detalles del titulo--------*/
+.titular {
+    color: orange; 
+}
+
+.titular:after {
+    background: lightseagreen;
+}
+
+/*----------------Hard & Soft Skills------------------------*/
+#hard-skills, #soft-skills {
+    color: yellow;
+    margin-bottom: 10px;
+    margin-top:20px;  
+}    
+
+.row {
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.skills {
+    margin: 0px 15px;
+    padding: 0px 15px;
+    text-align: left;
+}
+
+
+/* revisar comportamientos de botones en su momento display: none*/
+fa-icon, span, .btn-edicion {
+    display: inline;
+}
+.btn-edicion {
+    margin-right:0;
+}
+
+/*--------Barra de progreso-----Hard skills----*/
+.progress {
+    height: 19px;
+    background: grey;
+    margin:0 auto;
+    padding:0;    
+}
+
+.progress-bar {
+    color: rgb(39, 37, 37);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*-------Clases de colores para hard skills---------*/
+.bg-orangered {
+    background: orangered;
+}
+.bg-blue {
+    background:blue;
+}
+.bg-yellow {
+    background:yellow;
+}
+.bg-purple {
+    background: purple;
+}
+.bg-red {
+    background: red;
+}
+.bg-green {
+    background:green;
+}
+.bg-pink {
+    background: salmon;
+}
+
+fa-icon, span {
+    margin: 5px;
+    padding: 0%;
+    font-size: 20px;
+    color: white;
+}
+
+hr {
+    border: 1px solid white;
+    width: 60%;
+    margin:0 auto;
+    margin-bottom: 15px;
+}

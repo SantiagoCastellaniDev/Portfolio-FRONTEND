@@ -1,0 +1,57 @@
+/*---------Recuadro Acerca-de-------*/
+#acerca-de {
+  padding:10px;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom:1px solid red;
+  border-left:1px solid orange;
+  border-top:1px solid yellow;
+  border-right:1px solid green; 
+}
+
+h2 {
+  color: yellow; 
+  margin:10px
+}
+
+p {
+  color: yellow;
+  margin:10px;
+}
+
+.row {
+  margin:0 auto;
+  padding:0 auto;
+  display:flexbox;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*---------Foto de perfil--------*/
+.foto-perfil{
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  top:-88px;
+  right:30px;
+  padding: 0;
+  margin:0 auto;
+}
+
+/*----------BOTON EDITAR PERFIL---------*/
+#editar-foto-perfil {  
+  position: relative;
+  top:-130px;
+  left:60px;
+  padding: 0;
+  margin:0 auto;
+}
+
+/*----????????--------*/
+#about {
+  padding:0 auto;
+  margin:0 auto;
+}

@@ -1,0 +1,76 @@
+/*------BARRA DE NAVEGACION---------*/
+
+#navegacion {    
+    height: 60px;
+    display: flexbox;
+    align-items: center;
+    background: black;
+    color: white;
+    font-weight: 600;
+    align-content: center;
+    width:100%;
+}
+
+/*------LOGO Argentina Programa---------*/
+
+#logoargentina {
+  top: 15px;
+  height:40px;
+  width:100%;
+}
+
+.span1 {
+  position: absolute;
+  left: 75px;
+  top: 17px;
+}
+
+.span2 {
+  position: absolute;
+  left: 230px;
+  top: 17px;
+}
+
+/*------Redes y LOGIN--------*/
+
+ul li {
+  color:white;
+  justify-content: center;
+  margin-top: 20px;
+  margin-inline: 7px;  
+}
+
+ul li a {
+  color:white;
+  font-size: 20px;/*
+  z-index: 1999;*/
+}
+
+ul li a:hover {
+  color: yellow;
+}
+
+
+/*--------BOTON LOGIN-------*/
+
+.btn-login {
+  color: white;
+  background:green;
+  border-radius: 100%;
+  margin-left: 3px;
+  margin-right: 57px;
+}
+
+.btn-login:hover {
+  color: black;
+  background: yellow;
+}
+
+
+@media (max-width: 592px) {
+  .span2 {display:none}
+}
+
+@media (max-width: 450px) {
+  .span1 {display:none}
+}

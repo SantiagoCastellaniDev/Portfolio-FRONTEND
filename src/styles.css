@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+/*------Recuadro de secciones--------*/
+
+.recuadro {
+    margin: 40px;
+}
+
+.seccion {
+    align-content: center;
+    text-align:center;
+    background:black;
+    border-radius: 10px;
+    padding:40px;
+    margin:0 auto;
+    border-bottom:1px solid red;
+    border-left:1px solid orange;
+    border-top:1px solid yellow;
+    border-right:1px solid green;
+}
+
+
+/*-------TIULO DE SECCION--------*/
+
+.titulo-seccion {
+    margin-bottom:25px;
+}
+
+.titular {   
+    font-size: 2em;
+    font-weight:300;
+    margin:0 0 30px 30px;
+    position:relative;
+    display:inline-block
+}
+
+.titular:after {
+    position:absolute;
+    content:'';
+    top:100%;
+    height:1px;
+    width:50px;
+    left:0;
+    right:0;
+    margin:0 auto;  
+}
+
+
+/*-------Desbloqueo de BOTON AGREGAR-------*/
+app-boton-agregar {
+    display: inline;
+}
+
+/*----Desbloqueo de BOTON EDITAR Y BORRAR-------*/
+app-boton-borrar, app-boton-editar {
+    display: inline;
+}

@@ -1,0 +1,64 @@
+/*--------EXPERIENCIA-------*/
+
+/*----Detalles del TITULO------*/
+.titulo-seccion {
+    margin-bottom: 0;
+}
+
+.titular {
+    color: lightseagreen; 
+}
+
+.titular:after {    
+    background: orange;
+}
+
+/*-----------Bloques educativos----------*/
+.row {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding:0px 0px;
+    justify-content: center;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.imagen-experiencia {
+    max-width: 50px;
+    max-height: 50px;
+}
+hr {
+    border: 1px solid white;
+}
+
+.data-experiencia {
+    text-align: left;
+    margin: 0 auto;
+    padding:0 auto;
+}
+
+h3 {
+    font-size: 20px;
+    text-align:left;
+    margin:0;
+    padding:0;
+}
+
+.data-experiencia h6 {
+    font-size: 15px;
+    padding: 0;
+    margin:0;
+}
+
+.data-experiencia h4 {
+    font-size: 15px;
+    padding:0 auto;
+    margin:0 auto;
+}
+
+.data-experiencia p {
+    font-size: 15px;
+    padding:0 auto;
+    margin:0 auto;
+}

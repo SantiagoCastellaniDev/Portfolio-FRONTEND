@@ -1,0 +1,84 @@
+/*-----EDUCACION--------*/
+
+/*-------Detalles del titulo-------*/
+
+.titular {
+    color: green; 
+}
+
+.titular:after {
+    background:yellow;
+}
+
+/*-----------BLOQUE EDUCATIVO------------*/
+
+article {
+    background: black;
+    height: max-content;
+    text-align:center;
+    justify-content: center;
+    padding: 0 auto;
+    padding-right: 25px;
+    border: 1px solid grey;
+    margin:0 auto;
+    margin-top: 15px;
+}
+
+.data-educacion {
+    text-align: left;
+    color: grey;
+    display:inline-block;
+    justify-content: center;
+    padding: 0 auto;
+}
+
+article h3 {
+    font-size: 20px;
+    text-align:left;
+    margin:0;
+    color:white;
+    padding:0;
+}
+
+article h6 {
+    font-size: 15px;
+    padding: 0;
+    margin:0;
+}
+
+article h4 {
+    font-size: 15px;
+    padding:0 auto;
+    margin:0 auto;
+}
+
+article p {
+    font-size: 15px;
+    padding:0 auto;
+    margin:0 auto;
+}
+
+.imagen-logo {
+    max-width: 50px;
+    max-height: 50px;
+    margin: 0 auto;
+    padding: 0 auto;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+.row {
+    margin:0 auto;
+    padding-top:5px;
+    padding-right:15px;
+    padding-bottom:5px;
+    display:flexbox;
+    align-items: center;
+    justify-content: center;
+}
+
+app-boton-editar, app-boton-borrar {
+    padding-right: 50px;
+    margin-right: 25px;
+    
+}
