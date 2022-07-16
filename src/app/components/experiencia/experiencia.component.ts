@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { subscribeOn } from 'rxjs';
+import { ExperienciaService } from 'src/app/services/experiencia.service';
+
 
 @Component({
   selector: 'app-experiencia',
@@ -7,11 +9,16 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-  faPlus = faPlus;
 
-  constructor() { }
+  experiencia:any;
+ 
+  constructor(private datosExperiencia:ExperienciaService) { }
 
   ngOnInit(): void {
+    this.datosExperiencia.obtenerDatos().subscribe(data =>{
+      console.log(data);
+      this.experiencia=data;
+    });
   }
 
 }

@@ -1,4 +1,4 @@
-<app-experiencia-edit></app-experiencia-edit>
+
 
 <section  id="experiencia" class="recuadro">
     <div class="container-fluid seccion">
@@ -9,35 +9,21 @@
         </div>
         <!----------BLOQUE DE EXPERIENCIAS-------->
         <hr>
-        <div class="row">
+        <div class="row" *ngFor="let experi of experiencia">         
             <div class="col-md-2">
-                <img class="imagen-experiencia" src="../../../assets/images/flor.jpg" alt="">
+                <img class="imagen-experiencia" [src]="experi.img_LogoEx" alt="">
             </div>
             <div class="data-experiencia col-md-9">
-                <h3>Desarrollo Web Full Stack</h3>
-                <h6>(2021 / Actualidad)</h6>
-                <h4></h4>
-                <p>Trabajo freelance en desarrollo web, para profundizar mis conocimientos y ganar experiencia.</p>
+                <h3>{{experi.puestoEx}}</h3>
+                <h6>{{experi.fechaEx}}</h6>
+                <h4>{{experi.empresaEx}}</h4>
+                <p>{{experi.descripcionEx}}</p>
             </div>
             <div class="col-md-1">
                 <app-boton-editar data-bs-toggle="modal" data-bs-target="#editexperiencia"></app-boton-editar>
                 <app-boton-borrar></app-boton-borrar>
             </div>
             <hr>
-            <div class="col-md-2">
-                <img class="imagen-experiencia" src="../../../assets/images/flor.jpg" alt="">
-            </div>
-            <div class="data-experiencia col-md-9">
-                <h3>Desarrollo Web Full Stack</h3>
-                <h6>(2021 / Actualidad)</h6>
-                <h4></h4>
-                <p>Trabajo freelance en desarrollo web, para profundizar mis conocimientos y ganar experiencia.</p>
-            </div>
-            <div class="col-md-1">
-                <app-boton-editar></app-boton-editar>
-                <app-boton-borrar></app-boton-borrar>
-            </div>
         </div>
-        <hr>
     </div>
 </section>

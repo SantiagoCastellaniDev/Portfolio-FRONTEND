@@ -8,93 +8,30 @@
         
 
         <!-----BLOQUE DE PROYECTOS------>
-            <div class="container row">
-                <hr>
-                <div class="col-11">
-                    <div class="proyecto shadow-large">
-                        <!----Imagen de proyecto---->
-                        <div class="imagen-proyecto">
-                            <img src="../../../assets/images/portfolio.jpg" alt="imagen de proyecto"/>
-                        </div>
-                        <!----Informacion de proyecto---->                                   
-                        <div class="data-proyecto">
-                            <h3><b>Portfolio WEB</b></h3>                                                    
-                            <br>
-                            <span>(Febrero 2022 - Agosto 2022)</span>
-                            <h4>Desarrollador Full Stack</h4>
-                            <p>
-                                Diseño, creación y desarrollo del portfolio Web personal, como trabajo final integrador para el programa Argentina Programa,  utilizando HTML CSS, Javascript, Bootstrap, Angular, JAVA, Springboot y MySQL. 
-                            </p>
-                            <a href="https://www.youtube.com/watch?v=Z_fEKap24wU" target="blanck">Ver proyecto</a>
-                        </div>                        
+        <div class="container row" *ngFor="let proyecto of proyectos">
+            <hr>
+            <div class="col-11">
+                <div class="proyecto shadow-large">
+                    <!----Imagen de proyecto---->
+                    <div class="imagen-proyecto">
+                        <img [src]="proyecto.img_Project"/>
                     </div>
+                    <!----Informacion de proyecto---->                                   
+                    <div class="data-proyecto">
+                        <h3><b>{{proyecto.nombreProject}}</b></h3>                                                    
+                        <br>
+                        <span>{{proyecto.fechaProject}}</span>
+                        <h4>{{proyecto.puestoProject}}</h4>
+                        <p>{{proyecto.descripcionProject}}</p>
+                        <a href="https://www.youtube.com/watch?v=Z_fEKap24wU" target="blanck">Ver proyecto</a>
+                    </div>                        
                 </div>
-                <div class="col-1">
-                    <app-boton-editar></app-boton-editar>
-                    <app-boton-borrar></app-boton-borrar>                    
-                </div>
-                
-                <hr>
-            <!--------------------------------------------------------------->
-                <div class="col-11">
-                    <div class="proyecto shadow-large">
-                        <!----Imagen de proyecto---->
-                        <div class="imagen-proyecto">
-                            <img src="../../../assets/images/coiron.jpg" alt="imagen de proyecto"/>
-                        </div>
-                        <!----Informacion de proyecto---->                                   
-                        <div class="data-proyecto">
-                            <h3><b>Coiron Bioconstrucción</b></h3>
-                                                  
-                            <br>
-                            <span>(Febrero 2022 - Agosto 2022)</span>
-                            <h4>Desarrollador Full Stack</h4>
-                            <p>
-                                Portfolio de trabajos de una cooperativa de bioconstrución.<br>
-                                (HTML CSS, Javascript, Bootstrap, Angular, JAVA, Springboot y MySQL.) 
-                            </p>
-                            <a href="https://www.youtube.com/watch?v=Z_fEKap24wU" target="blanck">Ver proyecto</a>
-                        </div>                        
-                    </div>
-                </div>
-                <div class="col-1">
-                    <app-boton-editar></app-boton-editar>
-                    <app-boton-borrar></app-boton-borrar>
-                </div>               
-
-                <hr>
-            <!------------------------------------->
-                
-                <div class="col-11">
-                    <div class="proyecto shadow-large">
-                        <!----Imagen de proyecto---->
-                        <div class="imagen-proyecto">
-                            <img src="../../../assets/images/cuentos.jpg" alt="imagen de proyecto"/>
-                        </div>
-                        <!----Informacion de proyecto---->                                   
-                        <div class="data-proyecto">
-                            <h3><b>Cuentos de la llanura</b></h3>
-                                                   
-                            <br>
-                            <span>(Febrero 2022 - Agosto 2022)</span>
-                            <h4>Desarrollador Full Stack</h4>
-                            <p>
-                                Biblioteca de relatos de un escritor pampeano.<br>
-                                (HTML CSS, Javascript, Bootstrap.) 
-                            </p>
-                            <a href="https://www.youtube.com/watch?v=Z_fEKap24wU" target="blanck">Ver proyecto</a>
-                        </div>                        
-                    </div>
-                </div>
-                <div class="col-1">
-                    <app-boton-editar></app-boton-editar>
-                    <app-boton-borrar></app-boton-borrar>                    
-                </div>   
-                
-                <hr>
-            <!------------>
-                
             </div>
-        
+            <div class="col-1">
+                <app-boton-editar></app-boton-editar>
+                <app-boton-borrar></app-boton-borrar>                    
+            </div>                
+            <hr>
+        </div>            
     </div>
 </section>

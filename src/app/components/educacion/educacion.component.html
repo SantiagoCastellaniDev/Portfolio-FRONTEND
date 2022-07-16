@@ -1,75 +1,152 @@
-<app-educacion-edit></app-educacion-edit>
-<app-deleteeducacion></app-deleteeducacion>
+<!-------SECCION EDUCACION--------->
 
 <section id="educacion" class="recuadro">
     <div class="container-fluid seccion">
         <!---Titulo de seccion y BOTON AGREGAR------>
         <div class="titulo-seccion">
            <h2 class="titular">Educación</h2>
-           <app-boton-agregar></app-boton-agregar> 
-        </div>                
+           <app-boton-agregar data-bs-toggle="modal" data-bs-target="#addEducacion"></app-boton-agregar> 
+        </div>
+        
         <!----BLOQUE EDUCATIVO----->
-        <article class="container bloque-educativo">
+        <article class="container bloque-educativo" *ngFor="let edu of educacion">
             <div class="row">
                 <div class="col-1">
-                    <img class="imagen-logo" src="../../../assets/images/logoargentinaprograma.png" alt="">
+                    <img class="imagen-logo" [src]="edu.img_LogoEdu" alt="">
                 </div>
                 <div class="container data-educacion col-10">
-                    <h3>Desarrollador Full Stack Jr.</h3>                    
-                    <span>(2021 - 2022)</span>
-                    <h4>Argentina Programa</h4>
-                    <p>#YO PROGRAMO</p>
+                    <h3>{{edu.tituloEdu}}</h3>                    
+                    <span>{{edu.fechaEdu}}</span>
+                    <h4>{{edu.institucionEdu}}</h4>
+                    <p>{{edu.descripcionEdu}}</p>
                 </div>
                 <div class="col-1">
-                    <app-boton-editar data-bs-toggle="modal" data-bs-target="#editeducacion"></app-boton-editar>
-                    <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteeducacion"></app-boton-borrar>
+                    <app-boton-editar data-bs-toggle="modal" data-bs-target="#editEducacion"></app-boton-editar>
+                    <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteEducacion"></app-boton-borrar>
                 </div>
             </div>
         </article>
-        <!----------------------------------------------------------------->
-        
-        
-        
-    
-        <!---------------------------------------------------------------->
-
-
-        <article class="container bloque-educativo">
-            <div class="row">
-                <div class="col-1">
-                    <img class="imagen-logo" src="../../../assets/images/unlp.jpg" alt="">
-                </div>
-                <div class="container data-educacion col-10">
-                    <h3>Ingeniería Electrónica</h3>                    
-                    <span>(2003 - 2005)</span>
-                    <h4>Universidad Nacional de La Plata</h4>
-                    <p>La Plata, Bs.As, Argentina. (Estudios no concluidos)</p>
-                </div>
-                <div class="col-1">
-                    <app-boton-editar></app-boton-editar>
-                    <app-boton-borrar></app-boton-borrar>
-                </div>
-            </div>
-        </article>
-        <!--------------------------------------------------------->
-        <article class="container bloque-educativo">
-            <div class="row">
-                <div class="col-1">
-                    <img class="imagen-logo" src="../../../assets/images/logoeetn1.jpg" alt="">
-                </div>
-                <div class="container data-educacion col-10">
-                    <h3>Técnico en Equipos e Instalaciones Electromecánicas</h3>                    
-                    <h6>(1997 - 2002)</h6>
-                    <h4>Escuela de Educación Técnica Nº1 Gral.Savio</h4>
-                    <p>Saladillo, Bs.As, Argentina.</p>
-                </div>
-                <div class="container col-1">
-                    <app-boton-editar></app-boton-editar>
-                    <app-boton-borrar></app-boton-borrar>
-                </div>
-            </div>
-        </article>       
     </div>
 </section>
+<!-------------------------------->
 
 
+<!-------MODALES----agregar, editar y borrar-->
+
+
+<!-------AGREGAR EDUCACION----------->
+<div class="modal fade" id="addEducacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-agregar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">AGREGAR EDUCACION</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form action="" id="agregarEducacion" class="add-form" >
+            <div class="modal-body">
+                <div>
+                    <label for="itemTitle" class="form-label">Título</label>
+                    <input id="titulo" type="text" required>
+                </div>
+                <div>
+                    <label for="itemTitle" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="fecha" type="text" class="form-control"  required>
+                </div>
+                <div>
+                    <label for="itemTitle" class="form-label">Institución</label>
+                    <input id="institucion" type="text" class="form-control"  required>
+                </div>
+                <div>
+                    <label for="itemTitle" class="form-label">Lugar y/o informacion adicional</label>
+                    <input id="descripcion" type="text" class="form-control" >
+                </div>
+                <div>
+                    <label for="itemTitle" class="form-label">URL (logo de la institucion)</label>
+                    <input id="img" type="text" class="form-control" >
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" (click)="guardarEducacion()">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+<!--------EDITAR EDUCACION-------->
+<div class="modal fade" id="editEducacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-editar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">EDITAR EDUCACION</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form action="">
+            <div class="modal-body">
+                <div>
+                    <label for="itemTitle" class="form-label">Título</label>
+                    <input id="titulo" type="text" class="form-control" required>
+                </div>
+                <div>
+                    <label for="itemTitle" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="fecha" type="text" class="form-control" required>
+                </div>
+                <div>
+                    <label for="itemTitle" class="form-label">Institución</label>
+                    <input id="institucion" type="text" class="form-control" required>
+                </div>
+                <div>
+                    <label for="itemTitle" class="form-label">Lugar y/o informacion adicional</label>
+                    <input id="descripcion" type="text" class="form-control">
+                </div>
+                <div>
+                    <label for="itemTitle" class="form-label">URL (logo de la institucion)</label>
+                    <input id="img" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+<!-----------BORRAR EDUCACION------------>
+<div class="modal fade" id="deleteEducacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-borrar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR EDUCACION</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="">
+            <div class="modal-body">
+                <div>
+                    <label for="itemTitle" class="form-label">hkjhkjhksjdhkfh</label>
+                    <input id="itemTitle" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+
+  
+
+
+
+
+  

@@ -1,0 +1,7 @@
+div {
+    background: url("../../../assets/images/estrellas2.jpg");
+    background-repeat: center;
+    background-attachment: fixed;
+    width:100%;
+    font-family: 'Times New Roman', Times, serif;    
+}

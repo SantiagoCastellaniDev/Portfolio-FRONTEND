@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
+import { subscribeOn } from 'rxjs';
+import { EducacionService } from 'src/app/services/educacion.service';
+
+import { FormControl } from '@angular/forms';
+import { Educacion } from 'src/app/model/educacion';
 
 @Component({
   selector: 'app-educacion',
@@ -10,14 +12,37 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-  faPlus = faPlus;
-  faPencilAlt = faPencilAlt;
-  faTrash = faTrash;
-  faTimes = faTimes;
 
-  constructor() { }
+  educacion:any;
+  addForm: any;
+  nuevaEducacion = new FormControl;
+     
+  constructor(private datosEducacion:EducacionService) { }
 
   ngOnInit(): void {
+    this.datosEducacion.obtenerDatos().subscribe(data =>{
+      console.log(data);
+      this.educacion=data;
+    });
+  }
+
+  guardarEducacion(){
+    console.log("hola");
   }
 
 }
+/*
+this.productService.create(this.product).subscribe(() => {
+  this.productService.showMessage('Produto criado!')
+  this.router.navigate(['/products'])
+
+  deleteProduct(): void {
+    this.productService.delete(this.product.id).subscribe(() => {
+      this.productService.showMessage("Produto excluido com sucesso!");
+      this.router.navigate(["/products"]);
+    });
+  }
+
+  cancel(): void {
+    this.router.navigate(["/products"]);
+  }*/
