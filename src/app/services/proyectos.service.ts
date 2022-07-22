@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Proyecto } from '../model/proyecto';
 
@@ -21,7 +21,7 @@ export class ProyectosService {
 
   //BUSCAR POR ID
   public buscarProyecto(id:number):Observable<Proyecto>{
-    return this.http.get<Proyecto>(this.proyectoURL + 'buscar/${id}')
+    return this.http.get<Proyecto>(this.proyectoURL + `buscar/${id}`)
   }
 
   //CREAR
@@ -30,13 +30,13 @@ export class ProyectosService {
   }
 
   //ACTUALIZAR
-  public update(id:number,proyecto: Proyecto):Observable<any>{
-    return this.http.put<any>(this.proyectoURL + 'update/${id}',proyecto)
+  public actualizarProyecto(id:number,proyecto:Proyecto,httpHeaders:HttpHeaders):Observable<any>{    
+    return this.http.put<any>(this.proyectoURL + `editar/${id}`,proyecto,{})
   }
 
   //BORRAR
   public borrarProyecto(id:number):Observable<any>{
-    return this.http.delete<any>(this.proyectoURL + 'borrar/${id}')
+    return this.http.delete<any>(this.proyectoURL + `borrar/${id}`)
   }
 
 

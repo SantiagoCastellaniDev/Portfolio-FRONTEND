@@ -3,7 +3,7 @@
         <!------Titulo de seccion y boton agregar-->
         <div class="titulo-seccion">
             <h2 class="titular">Proyectos</h2>
-            <app-boton-agregar></app-boton-agregar>
+            <app-boton-agregar data-bs-toggle="modal" data-bs-target="#addProyecto"></app-boton-agregar>
         </div>
         
 
@@ -28,10 +28,124 @@
                 </div>
             </div>
             <div class="col-1">
-                <app-boton-editar></app-boton-editar>
-                <app-boton-borrar></app-boton-borrar>                    
+                <app-boton-editar data-bs-toggle="modal" data-bs-target="#editProyecto" (click)="editableId(proyecto.idProject,proyecto)"></app-boton-editar>
+                <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteProyecto" (click)="trashId(proyecto.idProject,proyecto)"></app-boton-borrar>                    
             </div>                
             <hr>
         </div>            
     </div>
 </section>
+
+<!-------MODALES----agregar, editar y borrar-->
+
+
+<!-------AGREGAR PROYECTO----------->
+<div class="modal fade" id="addProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-agregar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">AGREGAR PROYECTO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form #f="ngForm"  id="agregarProyecto" class="add-form" (ngSubmit)="guardarProyecto()" novalidate>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="nombreProject" class="form-label">Nombre del proyecto</label>
+                    <input id="nombreProject" type="text" name="nombreProject" class="form-control" [(ngModel)]="newNombreProject" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaProject" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="fechaProject" type="text" name="fechaProject" class="form-control" [(ngModel)]="newFechaProject" required>
+                </div>
+                <div class="form-group">
+                    <label for="puestoProject" class="form-label">Puesto desempeñado</label>
+                    <input id="puestoproject" type="text" name="empresaEx" class="form-control" [(ngModel)]="newPuestoProject" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionProject" class="form-label">Descripcion general del proyecto</label>
+                    <input id="descripcionProject" type="text" name="descripcionProject" class="form-control" [(ngModel)]="newDescripcionProject" >
+                </div>
+                <div class="form-group">
+                    <label for="img_Project" class="form-label">URL (logo de la institucion)</label>
+                    <input id="img_Project" type="text" name="img_Project" class="form-control" [(ngModel)]="newImg_Project">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+<!--------EDITAR PROYECTO-------->
+<div class="modal fade" id="editProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-editar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">EDITAR EXPERIENCIA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form #editForm="ngForm"  id="agregarExperiencia" class="add-form" (ngSubmit)="editarProyecto()" novalidate>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="nombreproject" class="form-label">Nombre del proyecto</label>
+                    <input id="nombreProject" type="text" name="nombreProject"  class="form-control" [(ngModel)]="newNombreProject" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaProject" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="fechaProject" type="text" name="fechaProject" class="form-control" [(ngModel)]="newFechaProject" required>
+                </div>
+                <div class="form-group">
+                    <label for="puestoProject" class="form-label">Puesto</label>
+                    <input id="puestoProject" type="text" name="puestoProject"  class="form-control" [(ngModel)]="newPuestoProject" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionProject" class="form-label">Lugar y/o informacion adicional</label>
+                    <input id="descripcionProject" type="text" name="descripcionProject"  class="form-control" [(ngModel)]="newDescripcionProject" >
+                </div>
+                <div class="form-group">
+                    <label for="img_Project" class="form-label">URL (logo de la institucion)</label>
+                    <input id="img_Project" type="text" name="img_Project"  class="form-control" [(ngModel)]="newImg_Project">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+<!-----------BORRAR PROYECTO------------>
+<div class="modal fade" id="deleteProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-borrar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR EXPERIENCIA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form (ngSubmit)="eliminarProyecto()">
+            <div class="modal-body">
+                <div>
+                    <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar esta experiencia?</label>
+                    <input id="itemTitle" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+
