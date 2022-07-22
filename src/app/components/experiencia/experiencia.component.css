@@ -62,3 +62,25 @@ h3 {
     padding:0 auto;
     margin:0 auto;
 }
+
+/*ESTILOS DE MODALES DE EDICION*/
+
+
+.modal-content {    
+    border-bottom:4px solid red;
+    border-left:4px solid orange;
+    border-top:4px solid yellow;
+    border-right:4px solid green;  
+}
+
+.modal-editar {
+    background: rgb(197, 197, 21);  
+}
+
+.modal-agregar {
+    background: orangered;  
+}
+
+.modal-borrar {
+    background: red;  
+}

@@ -1,8 +1,8 @@
 
-/*
-export class Educacion {
 
-    idEdu?: number;
+export class Educacion {
+/*
+    idEdu?: number*/
     tituloEdu: string;
     fechaEdu: string;
     institucionEdu: string;
@@ -10,8 +10,8 @@ export class Educacion {
     img_LogoEdu: string;
 
     
-    constructor(idEdu:number, tituloEdu:string, fechaEdu:string, institucionEdu: string, descripcionEdu: string, img_LogoEdu:string) {
-        this.idEdu = idEdu;
+    constructor({/*idEdu */tituloEdu, fechaEdu, institucionEdu, descripcionEdu, img_LogoEdu}:{ /*idEx:number, */tituloEdu: string; fechaEdu: string; institucionEdu: string; descripcionEdu: string; img_LogoEdu: string; }) {
+       /* this.idEdu = idEdu;*/
         this.tituloEdu = tituloEdu;
         this.fechaEdu = fechaEdu;
         this.institucionEdu = institucionEdu;
@@ -19,8 +19,8 @@ export class Educacion {
         this.img_LogoEdu = img_LogoEdu;
     }
 }
-*/
 
+/*
 export interface Educacion {
 
     idEdu?: number;
@@ -30,6 +30,7 @@ export interface Educacion {
     descripcionEdu: string;
     img_LogoEdu: string;
     
-}
+    
+}*/
 
 

@@ -1,18 +1,18 @@
 export class Experiencia {
-
-    idEx?: number;
+/*
+    idEx?: number;*/
     puestoEx: string;
     fechaEx: string;
-    institucionEx: string;
+    empresaEx: string;
     descripcionEx: string;
     img_LogoEx: string;
 
     
-    constructor(idEx:number, puestoEx:string, fechaEx:string, institucionEx: string, descripcionEx: string, img_LogoEx:string) {
-        this.idEx = idEx;
+    constructor({ /*idEx,*/puestoEx, fechaEx, empresaEx, descripcionEx, img_LogoEx }: { /*idEx:number, */puestoEx: string; fechaEx: string; empresaEx: string; descripcionEx: string; img_LogoEx: string; }) {
+        /*this.idEx = idEx;*/
         this.puestoEx = puestoEx;
         this.fechaEx = fechaEx;
-        this.institucionEx = institucionEx;
+        this.empresaEx = empresaEx;
         this.descripcionEx = descripcionEx;
         this.img_LogoEx = img_LogoEx;
     }

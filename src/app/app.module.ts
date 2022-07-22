@@ -27,8 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BotonLoginComponent } from './components/login/boton-login/boton-login.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-
-
+import { EditarExperienciaComponent } from './components/editar-experiencia/editar-experiencia.component';
 
 
 @NgModule({
@@ -49,6 +48,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     BotonLoginComponent,
     LoginComponent,
     PortfolioComponent,
+    EditarExperienciaComponent,
+    
   ],
 
   imports: [
@@ -57,9 +58,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     HttpClientModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
-
-    
+    ReactiveFormsModule    
   ],
   
   providers: [],

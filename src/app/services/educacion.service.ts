@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Educacion } from '../model/educacion';
 
@@ -27,14 +27,14 @@ export class EducacionService {
     return this.http.post<any>(this.educacionURL + "guardar",educacion)
   }
 
-  //ACTUALIZAR en vez de Observable<Educacion> antes decia Observable<any>
-  public update(id:number,educacion: Educacion):Observable<Educacion>{
-    return this.http.put<any>(this.educacionURL + 'update/${id}',educacion)
-  }
+ //ACTUALIZAR
+ public actualizarEducacion(id:number,educacion:Educacion,httpHeaders:HttpHeaders):Observable<any>{    
+  return this.http.put<any>(this.educacionURL + `editar/${id}`,educacion,{})
+}
 
   //BORRAR
   public borrarEducacion(id:number):Observable<any>{
-    return this.http.delete<any>(this.educacionURL + 'borrar/${id}')
+    return this.http.delete<any>(this.educacionURL + `borrar/${id}`)
   }
 
 

@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, HttpClientModule, HttpResponseBase, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../model/experiencia';
+
+
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,23 +23,22 @@ export class ExperienciaService {
 
   //BUSCAR POR ID
   public buscarExperiencia(id:number):Observable<Experiencia>{
-    return this.http.get<Experiencia>(this.experienciaURL + 'buscar/${id}')
+    return this.http.get<Experiencia>(this.experienciaURL + `buscar/${id}`)
   }
 
-  //CREAR
+  //CREAR EXPERIENCIA
   public guardarExperiencia(experiencia:Experiencia):Observable<any>{
     return this.http.post<any>(this.experienciaURL + "guardar", experiencia)
   }
 
-  //ACTUALIZAR
-  public update(id:number,experiencia: Experiencia):Observable<any>{
-    return this.http.put<any>(this.experienciaURL + 'update/${id}',experiencia)
+    //ACTUALIZAR
+  public actualizarExperiencia(id:number,experiencia:Experiencia,httpHeaders:HttpHeaders):Observable<any>{    
+    return this.http.put<any>(this.experienciaURL + `editar/${id}`,experiencia,{})
   }
 
   //BORRAR
   public borrarExperiencia(id:number):Observable<any>{
-    return this.http.delete<any>(this.experienciaURL + 'borrar/${id}')
+    return this.http.delete<any>(this.experienciaURL + `borrar/${id}`)
   }
-
 
 }

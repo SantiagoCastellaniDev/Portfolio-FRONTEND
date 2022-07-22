@@ -1,11 +1,11 @@
-
+<!---------SECCION EXPERIENCIA---------------->
 
 <section  id="experiencia" class="recuadro">
     <div class="container-fluid seccion">
         <!---Titulo de seccion y BOTON AGREGAR------>
         <div class="titulo-seccion">
             <h2 class="titular">Experiencia</h2>
-            <app-boton-agregar></app-boton-agregar>
+            <app-boton-agregar data-bs-toggle="modal" data-bs-target="#addExperiencia"></app-boton-agregar>
         </div>
         <!----------BLOQUE DE EXPERIENCIAS-------->
         <hr>
@@ -20,10 +20,126 @@
                 <p>{{experi.descripcionEx}}</p>
             </div>
             <div class="col-md-1">
-                <app-boton-editar data-bs-toggle="modal" data-bs-target="#editexperiencia"></app-boton-editar>
-                <app-boton-borrar></app-boton-borrar>
+                <app-boton-editar data-bs-toggle="modal" data-bs-target="#editExperiencia" (click)="editableId(experi.idEx,experi)"></app-boton-editar>
+                <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteExperiencia" (click)="trashId(experi.idEx,experi)"></app-boton-borrar>
             </div>
             <hr>
         </div>
     </div>
 </section>
+
+<!-------------------------------->
+
+
+<!-------MODALES----agregar, editar y borrar-->
+
+
+<!-------AGREGAR EXPERIENCIA----------->
+<div class="modal fade" id="addExperiencia" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-agregar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">AGREGAR EXPERIENCIA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form #f="ngForm"  id="agregarExperiencia" class="add-form" (ngSubmit)="guardarExperiencia()" novalidate>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="puestoEx" class="form-label">Puesto</label>
+                    <input id="puestoEx" type="text" name="puestoEx" class="form-control" [(ngModel)]="newPuestoEx" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaEx" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="fechaEx" type="text" name="fechaEx" class="form-control" [(ngModel)]="newFechaEx" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresaEx" class="form-label">Empresa</label>
+                    <input id="empresaEx" type="text" name="empresaEx" class="form-control" [(ngModel)]="newEmpresaEx" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionEx" class="form-label">Lugar y/o informacion adicional</label>
+                    <input id="descripcionEX" type="text" name="descripcionEx" class="form-control" [(ngModel)]="newDescripcionEx" >
+                </div>
+                <div class="form-group">
+                    <label for="img_LogoEX" class="form-label">URL (logo de la institucion)</label>
+                    <input id="img_LogoEx" type="text" name="img_LogoEx" class="form-control" [(ngModel)]="newImg_LogoEx">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+<!--------EDITAR EXPERIENCIA-------->
+<div class="modal fade" id="editExperiencia" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-editar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">EDITAR EXPERIENCIA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form #editForm="ngForm"  id="agregarExperiencia" class="add-form" (ngSubmit)="editarExperiencia()" novalidate>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="puestoEx" class="form-label">Puesto</label>
+                    <input id="puestoEx" type="text" name="puestoEx"  class="form-control" [(ngModel)]="newPuestoEx" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaEx" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="fechaEx" type="text" name="fechaEx" class="form-control" [(ngModel)]="newFechaEx" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresaEx" class="form-label">Empresa</label>
+                    <input id="empresaEx" type="text" name="empresaEx"  class="form-control" [(ngModel)]="newEmpresaEx" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionEx" class="form-label">Lugar y/o informacion adicional</label>
+                    <input id="descripcionEX" type="text" name="descripcionEx"  class="form-control" [(ngModel)]="newDescripcionEx" >
+                </div>
+                <div class="form-group">
+                    <label for="img_LogoEX" class="form-label">URL (logo de la institucion)</label>
+                    <input id="img_LogoEx" type="text" name="img_LogoEx"  class="form-control" [(ngModel)]="newImg_LogoEx">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+<!-----------BORRAR EXPERIENCIA------------>
+<div class="modal fade" id="deleteExperiencia" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modal-borrar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR EXPERIENCIA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form (ngSubmit)="eliminarExperiencia()">
+            <div class="modal-body">
+                <div>
+                    <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar esta experiencia?</label>
+                    <input id="itemTitle" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+

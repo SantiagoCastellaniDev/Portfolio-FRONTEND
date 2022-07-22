@@ -21,13 +21,14 @@
                     <p>{{edu.descripcionEdu}}</p>
                 </div>
                 <div class="col-1">
-                    <app-boton-editar data-bs-toggle="modal" data-bs-target="#editEducacion"></app-boton-editar>
-                    <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteEducacion"></app-boton-borrar>
+                    <app-boton-editar data-bs-toggle="modal" data-bs-target="#editEducacion" (click)="editableId(edu.idEdu,edu)"></app-boton-editar>
+                    <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteEducacion" (click)="trashId(edu.idEdu,edu)"></app-boton-borrar>
                 </div>
             </div>
         </article>
     </div>
 </section>
+
 <!-------------------------------->
 
 
@@ -43,31 +44,31 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <!------Formulario------->
-        <form action="" id="agregarEducacion" class="add-form" >
+        <form #f="ngForm"  id="agregarEducacion" class="add-form" (ngSubmit)="guardarEducacion()" novalidate>
             <div class="modal-body">
-                <div>
-                    <label for="itemTitle" class="form-label">Título</label>
-                    <input id="titulo" type="text" required>
+                <div class="form-group">
+                    <label for="tituloEdu" class="form-label">Puesto</label>
+                    <input id="tituloEdu" type="text" name="tituloEdu" class="form-control" [(ngModel)]="newtituloEdu" required>
                 </div>
-                <div>
-                    <label for="itemTitle" class="form-label">Período en años. Ej: (1998-2002) </label>
-                    <input id="fecha" type="text" class="form-control"  required>
+                <div class="form-group">
+                    <label for="fechaEdu" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="fechaEdu" type="text" name="fechaEdu" class="form-control" [(ngModel)]="newfechaEdu" required>
                 </div>
-                <div>
-                    <label for="itemTitle" class="form-label">Institución</label>
-                    <input id="institucion" type="text" class="form-control"  required>
+                <div class="form-group">
+                    <label for="institucionEdu" class="form-label">Empresa</label>
+                    <input id="institucionEdu" type="text" name="institucionEdu" class="form-control" [(ngModel)]="newinstitucionEdu" required>
                 </div>
-                <div>
-                    <label for="itemTitle" class="form-label">Lugar y/o informacion adicional</label>
-                    <input id="descripcion" type="text" class="form-control" >
+                <div class="form-group">
+                    <label for="descripcionEdu" class="form-label">Lugar y/o informacion adicional</label>
+                    <input id="descripcionEdu" type="text" name="descripcionEdu" class="form-control" [(ngModel)]="newdescripcionEdu" >
                 </div>
-                <div>
-                    <label for="itemTitle" class="form-label">URL (logo de la institucion)</label>
-                    <input id="img" type="text" class="form-control" >
+                <div class="form-group">
+                    <label for="img_LogoEdu" class="form-label">URL (logo de la institucion)</label>
+                    <input id="img_LogoEdu" type="text" name="img_LogoEdu" class="form-control" [(ngModel)]="newimg_LogoEdu">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" (click)="guardarEducacion()">Guardar cambios</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Guardar cambios</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
             </div>
         </form>
@@ -85,31 +86,31 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <!------Formulario------->
-        <form action="">
+        <form #f="ngForm"  id="editarEducacion" class="add-form" (ngSubmit)="editarEducacion()" novalidate>
             <div class="modal-body">
-                <div>
-                    <label for="itemTitle" class="form-label">Título</label>
-                    <input id="titulo" type="text" class="form-control" required>
+                <div class="form-group">
+                    <label for="tituloEdu" class="form-label">Titulo</label>
+                    <input id="tituloEdu" type="text" name="tituloEdu" class="form-control" [(ngModel)]="newtituloEdu" required>
                 </div>
-                <div>
-                    <label for="itemTitle" class="form-label">Período en años. Ej: (1998-2002) </label>
-                    <input id="fecha" type="text" class="form-control" required>
+                <div class="form-group">
+                    <label for="fechaEdu" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="fechaEdu" type="text" name="fechaEdu" class="form-control" [(ngModel)]="newfechaEdu" required>
                 </div>
-                <div>
-                    <label for="itemTitle" class="form-label">Institución</label>
-                    <input id="institucion" type="text" class="form-control" required>
+                <div class="form-group">
+                    <label for="institucionEdu" class="form-label">Institucion</label>
+                    <input id="institucionEdu" type="text" name="institucionEdu" class="form-control" [(ngModel)]="newinstitucionEdu" required>
                 </div>
-                <div>
-                    <label for="itemTitle" class="form-label">Lugar y/o informacion adicional</label>
-                    <input id="descripcion" type="text" class="form-control">
+                <div class="form-group">
+                    <label for="descripcionEdu" class="form-label">Lugar y/o informacion adicional</label>
+                    <input id="descripcionEdu" type="text" name="descripcionEdu" class="form-control" [(ngModel)]="newdescripcionEdu" >
                 </div>
-                <div>
-                    <label for="itemTitle" class="form-label">URL (logo de la institucion)</label>
-                    <input id="img" type="text" class="form-control">
+                <div class="form-group">
+                    <label for="img_LogoEdu" class="form-label">URL (logo de la institucion)</label>
+                    <input id="img_LogoEdu" type="text" name="img_LogoEdu" class="form-control" [(ngModel)]="newimg_LogoEdu">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Guardar cambios</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
             </div>
         </form>
@@ -126,16 +127,16 @@
           <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR EDUCACION</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="">
+        <form (ngSubmit)="eliminarEducacion()">
             <div class="modal-body">
                 <div>
-                    <label for="itemTitle" class="form-label">hkjhkjhksjdhkfh</label>
+                    <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar esta educación?</label>
                     <input id="itemTitle" type="text" class="form-control">
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
             </div>
         </form>
       </div>
