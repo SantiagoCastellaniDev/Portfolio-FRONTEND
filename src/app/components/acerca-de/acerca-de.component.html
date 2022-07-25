@@ -1,20 +1,74 @@
-<section id="acerca-de">
+<!-------SECCION ACERCA-DE-------->
+
+<section id="acerca-de" *ngFor="let perso of datospersona">
     <div class="container">
         <div class="row">
             <div class="col-md-2">
-                <img id="" class="foto-perfil" src="../../../assets/images/fotoperfil.png">
-                <app-boton-editar id="editar-foto-perfil"></app-boton-editar>
+                <img id="" class="foto-perfil" [src]="perso.img_perfil">
+                <app-boton-editar id="editar-foto-perfil" data-bs-toggle="modal" data-bs-target="#editFotoPerfil" (click)="editableId(perso.id,perso)"></app-boton-editar>
             </div>
             <div id="about" class="col-md-9">
                 <h2 class="">Sobre mí</h2>
-                <p>
-                    Desarrollador web en formación, amante de la naturaleza, con habilidades para las ciencias exactas y el trabajo cooperativo. Abierto a formar parte de nuevos proyectos que permitan sumar herramientas y aprendizajes en este camino formativo.
-                </p>
+                <p>{{perso.descripcion}}</p>
             </div>
             <div class="botones col-md-1">
-                <app-boton-editar></app-boton-editar>
-                <app-boton-borrar></app-boton-borrar>
+                <app-boton-editar id="editar-descrpcion" data-bs-toggle="modal" data-bs-target="#editDescripcion" (click)="editableId(perso.id,perso)"></app-boton-editar>
             </div>
         </div>
     </div>
 </section>
+
+<!-------MODAL EDITAR ACERCA-DE (foto perfil y descripcion)-------->
+
+
+<!--------EDITAR FOTO PERFIL-------->
+<div class="modal fade" id="editFotoPerfil" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-editar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">EDITAR FOTO PERFIL</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form #editForm="ngForm"  id="editarHeader" class="add-form" (ngSubmit)="editarFotoPerfil()" novalidate>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="imagen_perfil" class="form-label">URL de la  Perfil</label>
+                    <input id="imagen_perfil" type="text" name="imagen_perfil"  class="form-control" [(ngModel)]="newImg_Perfil" >
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
+
+<!--------EDITAR DESCRIPCION-------->
+<div class="modal fade" id="editDescripcion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-editar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">EDITAR DESCRIPCION</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form #editForm="ngForm"  id="editarHeader" class="add-form" (ngSubmit)="editarDescripcion()" novalidate>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="descripcion" class="form-label">Algunas palabras acerca de ti</label>
+                    <input id="descripcion" type="text" name="descripcion"  class="form-control" [(ngModel)]="newDescripcion" >
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!----------------------------->

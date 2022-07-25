@@ -1,13 +1,54 @@
-<header id="header">
+<header id="header" *ngFor="let perso of datospersona">
     <!----BANNER------>
-    <img class="img-responsive" id="banner" src="../../../assets/images/flor2.png" alt="banner">   
+    <img class="img-responsive" id="banner" [src]="perso.img_banner" alt="banner">   
     <!----CARTEL------> 
     <div id="lead">
         <div id="cartel" class="lead-content">
-            <h1>Santiago Castellani</h1>
-            <h2>Desarrollador Web Full Stack</h2>
-            <app-boton-editar></app-boton-editar>
+            <h1>{{perso.nombre}} {{perso.apellido}}</h1>
+            <h2>{{perso.presentacion}}</h2>
+            <app-boton-editar data-bs-toggle="modal" data-bs-target="#editHeader" (click)="editableId(perso.id,perso)"></app-boton-editar>
         </div>
     </div>
 </header>
+
+<!-------MODAL EDITAR HEADER (nombre, presentacion y banner)-------->
+
+
+<!--------EDITAR HEADER-------->
+<div class="modal fade" id="editHeader" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-editar">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">EDITAR PRESENTACION</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!------Formulario------->
+        <form #editForm="ngForm"  id="editarHeader" class="add-form" (ngSubmit)="editarPresentacion()" novalidate>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input id="nombre" type="text" name="nombre"  class="form-control" [(ngModel)]="newNombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido" class="form-label">Período en años. Ej: (1998-2002) </label>
+                    <input id="apellido" type="text" name="apellido" class="form-control" [(ngModel)]="newApellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="presentacion" class="form-label">Presentacion</label>
+                    <input id="presentacion" type="text" name="presentacion"  class="form-control" [(ngModel)]="newPresentacion" required>
+                </div>
+                <div class="form-group">
+                    <label for="imagen_banner" class="form-label">URL de imagen Banner</label>
+                    <input id="imagen_banner" type="text" name="imagen_banner"  class="form-control" [(ngModel)]="newImg_Banner" >
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+<!-------------------------------->
 

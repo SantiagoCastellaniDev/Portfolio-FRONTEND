@@ -19,7 +19,7 @@ export class EducacionService {
 
   //BUSCAR POR ID
   public buscarEducacion(id:number):Observable<Educacion>{
-    return this.http.get<Educacion>(this.educacionURL + 'buscar/${id}')
+    return this.http.get<Educacion>(this.educacionURL + `buscar/${id}`)
   }
 
   //CREAR

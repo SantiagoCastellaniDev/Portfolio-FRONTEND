@@ -1,6 +1,6 @@
 export class Persona {
-
-    id?: number;
+/*
+    id?: number;*/
     nombre: string;
     apellido: string;
     presentacion: string;
@@ -8,9 +8,9 @@ export class Persona {
     img_perfil: string;
     img_banner: string;
 
-    constructor (id: number, nombre: string, apellido: string, presentacion: string, descripcion: string, img_perfil: string, img_banner: string) {
+    constructor ({ /*id,*/ nombre, apellido, presentacion, descripcion, img_perfil, img_banner }: { /*id: number; */nombre: string; apellido: string; presentacion: string; descripcion: string; img_perfil: string; img_banner: string; }) {
 
-        this.id = id;
+        /*this.id = id;*/
         this.nombre = nombre;
         this.apellido = apellido;
         this.presentacion = presentacion;

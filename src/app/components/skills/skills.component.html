@@ -8,17 +8,17 @@
       <hr>
       <!--------Hard Skills--------------------->
       <div  id="hard-skills">
-        <app-boton-agregar></app-boton-agregar>
+        <app-boton-agregar data-bs-toggle="modal" data-bs-target="#addSkill"></app-boton-agregar>
         <h4>Hard Skills / Tecnologías</h4>          
       </div>
         <!------------------------->
-      <div class="row container-fluid" *ngFor="let skill of skillList">
+      <div class="row container-fluid" *ngFor="let skill of skills">
         <div class="skills col-xs-10 col-md-5">
           <fa-icon [icon]="faJs" [style.color]="skill.colorSkill"></fa-icon>
           <span [style.color]="skill.colorSkill">{{skill.nombreSkill}}</span>
           <div class="btn-edicion">
-            <app-boton-editar></app-boton-editar>
-            <app-boton-borrar></app-boton-borrar> 
+            <app-boton-editar data-bs-toggle="modal" data-bs-target="#editSkill" (click)="editableId(skill.idSkill,skill)"></app-boton-editar>
+            <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteSkill" (click)="trashId(skill.idSkill,skill)"></app-boton-borrar> 
           </div> 
           <div class="progress">               
             <div class="progress-bar bg-{{skill.colorSkill}}" role="progressbar" style="width:{{skill.porcentajeSkill}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{skill.nivelSkill}}</div>
@@ -87,5 +87,121 @@
       <hr>        
     </div>    
 </section>
+
+<!-------------------------------->
+
+
+<!-------MODALES----agregar, editar y borrar-->
+
+
+<!-------AGREGAR SKILL----------->
+<div class="modal fade" id="addSkill" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-agregar">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">AGREGAR EDUCACION</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!------Formulario------->
+      <form #f="ngForm"  id="agregarEducacion" class="add-form" (ngSubmit)="guardarSkill()" novalidate>
+          <div class="modal-body">
+              <div class="form-group">
+                  <label for="nombreSkill" class="form-label">Nombre de tecnologia o lenguaje</label>
+                  <input id="nombreSkill" type="text" name="nombreSkill" class="form-control" [(ngModel)]="newNombreSkill" required>
+              </div>
+              <div class="form-group">
+                  <label for="nivelSkill" class="form-label">Nivel o conocimiento de la herramienta</label>
+                  <input id="nivelSkill" type="text" name="nivelSkill" class="form-control" [(ngModel)]="newNivelSkill" required>
+              </div>
+              <div class="form-group">
+                  <label for="porcentajeSkill" class="form-label">Porcentaje</label>
+                  <input id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>
+              </div>
+              <div class="form-group">
+                  <label for="descripcionEdu" class="form-label">Color de la barra de progreso</label>
+                  <input id="colorSkill" type="color" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
+              </div>
+              <div class="form-group">
+                  <label for="img_Skill" class="form-label">Icono de la herramienta</label>
+                  <input id="img_Skill" type="text" name="img_Skill" class="form-control" [(ngModel)]="newImg_Skill">
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Guardar cambios</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-------------------------------->
+
+<!--------EDITAR SKILL-------->
+<div class="modal fade" id="editSkill" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-editar">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">EDITAR SKILL</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!------Formulario------->
+      <form #f="ngForm"  id="editarSkill" class="add-form" (ngSubmit)="editarSkill()" novalidate>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="nombreSkill" class="form-label">Nombre de tecnologia o lenguaje</label>
+              <input id="nombreSkill" type="text" name="nombreSkill" class="form-control" [(ngModel)]="newNombreSkill" required>
+          </div>
+          <div class="form-group">
+              <label for="nivelSkill" class="form-label">Nivel o conocimiento de la herramienta</label>
+              <input id="nivelSkill" type="text" name="nivelSkill" class="form-control" [(ngModel)]="newNivelSkill" required>
+          </div>
+          <div class="form-group">
+              <label for="porcentajeSkill" class="form-label">Porcentaje</label>
+              <input id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>
+          </div>
+          <div class="form-group">
+              <label for="descripcionEdu" class="form-label">Color de la barra de progreso</label>
+              <input id="colorSkill" type="text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
+          </div>
+          <div class="form-group">
+              <label for="img_Skill" class="form-label">Icono de la herramienta</label>
+              <input id="img_Skill" type="text" name="img_Skill" class="form-control" [(ngModel)]="newImg_Skill">
+          </div>
+          </div>
+          <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Guardar cambios</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-------------------------------->
+
+<!-----------BORRAR SKILL------------>
+<div class="modal fade" id="deleteSkill" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-borrar">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR SKILL</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form (ngSubmit)="eliminarSkill()">
+          <div class="modal-body">
+              <div>
+                  <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar esta educación?</label>
+                  <input id="itemTitle" type="text" class="form-control">
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-------------------------------->
+
 
            
