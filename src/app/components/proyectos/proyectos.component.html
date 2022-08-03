@@ -59,7 +59,7 @@
                     <input id="fechaProject" type="text" name="fechaProject" class="form-control" [(ngModel)]="newFechaProject" required>
                 </div>
                 <div class="form-group">
-                    <label for="puestoProject" class="form-label">Puesto desempeñado</label>
+                    <label for="puestoProject" class="form-label">Puesto o desempeño</label>
                     <input id="puestoproject" type="text" name="empresaEx" class="form-control" [(ngModel)]="newPuestoProject" required>
                 </div>
                 <div class="form-group">
@@ -67,12 +67,12 @@
                     <input id="descripcionProject" type="text" name="descripcionProject" class="form-control" [(ngModel)]="newDescripcionProject" >
                 </div>
                 <div class="form-group">
-                    <label for="img_Project" class="form-label">URL (logo de la institucion)</label>
+                    <label for="img_Project" class="form-label">URL (imagen representativa del proyecto)</label>
                     <input id="img_Project" type="text" name="img_Project" class="form-control" [(ngModel)]="newImg_Project">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
             </div>
         </form>
@@ -86,7 +86,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content modal-editar">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">EDITAR EXPERIENCIA</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">EDITAR PROYECTO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <!------Formulario------->
@@ -101,7 +101,7 @@
                     <input id="fechaProject" type="text" name="fechaProject" class="form-control" [(ngModel)]="newFechaProject" required>
                 </div>
                 <div class="form-group">
-                    <label for="puestoProject" class="form-label">Puesto</label>
+                    <label for="puestoProject" class="form-label">Puesto o desempeño</label>
                     <input id="puestoProject" type="text" name="puestoProject"  class="form-control" [(ngModel)]="newPuestoProject" required>
                 </div>
                 <div class="form-group">
@@ -109,7 +109,7 @@
                     <input id="descripcionProject" type="text" name="descripcionProject"  class="form-control" [(ngModel)]="newDescripcionProject" >
                 </div>
                 <div class="form-group">
-                    <label for="img_Project" class="form-label">URL (logo de la institucion)</label>
+                    <label for="img_Project" class="form-label">URL (imagen representativa del proyecto)</label>
                     <input id="img_Project" type="text" name="img_Project"  class="form-control" [(ngModel)]="newImg_Project">
                 </div>
             </div>
@@ -128,19 +128,19 @@
     <div class="modal-dialog">
       <div class="modal-content modal-borrar">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR EXPERIENCIA</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR PROYECTO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form (ngSubmit)="eliminarProyecto()">
             <div class="modal-body">
                 <div>
-                    <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar esta experiencia?</label>
+                    <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar este proyecto?</label>
                     <input id="itemTitle" type="text" class="form-control">
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
             </div>
         </form>
       </div>

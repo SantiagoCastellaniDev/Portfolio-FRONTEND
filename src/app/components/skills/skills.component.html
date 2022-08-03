@@ -99,7 +99,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content modal-agregar">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">AGREGAR EDUCACION</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">AGREGAR SKILL</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <!------Formulario------->
@@ -118,8 +118,8 @@
                   <input id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>
               </div>
               <div class="form-group">
-                  <label for="descripcionEdu" class="form-label">Color de la barra de progreso</label>
-                  <input id="colorSkill" type="color" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
+                  <label for="descripcionEdu" class="form-label">Color de la barra de progreso y skill</label>
+                  <input id="colorSkill" type="color-text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
               </div>
               <div class="form-group">
                   <label for="img_Skill" class="form-label">Icono de la herramienta</label>
@@ -127,7 +127,7 @@
               </div>
           </div>
           <div class="modal-footer">
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Guardar cambios</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Guardar</button>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>                
           </div>
       </form>
@@ -160,7 +160,7 @@
               <input id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>
           </div>
           <div class="form-group">
-              <label for="descripcionEdu" class="form-label">Color de la barra de progreso</label>
+              <label for="descripcionEdu" class="form-label">Color de la barra de progreso y skill</label>
               <input id="colorSkill" type="text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
           </div>
           <div class="form-group">
@@ -189,13 +189,13 @@
       <form (ngSubmit)="eliminarSkill()">
           <div class="modal-body">
               <div>
-                  <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar esta educación?</label>
+                  <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar esta skill?</label>
                   <input id="itemTitle" type="text" class="form-control">
               </div>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Eliminar</button>
           </div>
       </form>
     </div>

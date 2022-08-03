@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
   apiURL="https//localhost:8080/login/";
-  currentUserObject:BehaviorSubject<any>
+  currentUserObject:BehaviorSubject<any>;
 
   constructor(private http:HttpClient) {
     console.log("El servicio Auth esta corriendo");
@@ -17,8 +17,8 @@ export class AuthService {
 
    IniciarSesion(credenciales:any):Observable<any> {
     return this.http.post(this.apiURL, credenciales).pipe(map(data=>{
-
       sessionStorage.setItem('currentUser',JSON.stringify(data));
+      this.currentUserObject.next(data);
       
       return data
     }))

@@ -19,7 +19,7 @@ import { BotonEditarComponent } from './components/edicion/boton-editar/boton-ed
 import { BotonBorrarComponent } from './components/edicion/boton-borrar/boton-borrar.component';
 import { BotonAgregarComponent } from './components/edicion/boton-agregar/boton-agregar.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -27,6 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BotonLoginComponent } from './components/login/boton-login/boton-login.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { InterceptorService } from './services/interceptor.service';
 
 
 
@@ -59,7 +60,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     ReactiveFormsModule    
   ],
   
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS,useClass:InterceptorService, multi:true}],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -29,7 +29,7 @@ export class PersonaService {
 
  //ACTUALIZAR
  public actualizarPersona(id:number,persona:Persona,httpHeaders:HttpHeaders):Observable<any>{    
-  return this.http.patch<any>(this.personaURL + `editar/${id}`,persona,{})
+  return this.http.put<any>(this.personaURL + `editar/${id}`,persona,{})
 }
 
   //BORRAR

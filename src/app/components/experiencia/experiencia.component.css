@@ -82,5 +82,39 @@ h3 {
 }
 
 .modal-borrar {
-    background: red;  
+    background: grey;  
+}
+
+
+.modal-header h5{
+    color:blue;
+    font-size: 30px;
+}
+
+.form-control {
+    background-color: white;
+    color: grey;
+}
+
+.form-control:focus {
+    background-color: white;
+    color: black;
+}
+
+label {
+    margin-top:15px;
+    margin-bottom: 2px;
+}
+.modal-footer {
+    display: inline;
+}
+.modal-footer button {
+    margin: 25px
+}
+
+.btn-primary {
+    float: left
+}
+.btn-secondary {
+    float:right;
 }
