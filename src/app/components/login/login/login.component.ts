@@ -1,3 +1,4 @@
+/*
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,27 +9,35 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   formLogin:FormGroup;
+  data:any;
+  
 
-  constructor(private formBuilder:FormBuilder, private authService:AuthService, private ruta:Router) {
+  constructor(
+    private formBuilder:FormBuilder, 
+    private authService:AuthService, 
+    private router:Router) {
     this.formLogin = this.formBuilder.group(
       {
         email:['',[Validators.required,Validators.email]],
         password:['',[Validators.required,Validators.minLength(8)]],
-
-        /*Hay algunos parametros mas que aparecen en el video masterclass 8 minuto 17:53*/
-
+        nombreUsuario:['',[Validators.required]]
       }
     )
   }
-
   ngOnInit(): void {    
   }
 
   get Email (){
     return this.formLogin.get("email");
+  }
+  
+
+  get nombreUsuario (){
+    return this.formLogin.get("nombreUsuario");
   }
 
   get Password (){
@@ -39,10 +48,8 @@ export class LoginComponent implements OnInit {
     event.preventDefault;
     this.authService.IniciarSesion(this.formLogin.value).subscribe(data=>{
       console.log("DATA: " + JSON.stringify(data));
-      this.ruta.navigate(['/portfolio']);
+      this.router.navigate(['/portfolio']);
     })
   }
 
-  
-
-}
+}*/

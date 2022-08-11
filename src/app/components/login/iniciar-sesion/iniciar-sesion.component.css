@@ -1,0 +1,56 @@
+.all {
+    background: url("../../../../assets/images/estrellas.jpg");
+    background-repeat: center;
+    background-attachment: fixed;
+    width:100%;
+    font-family: 'Times New Roman', Times, serif;    
+}
+    
+
+
+.cuadro {
+    margin:200px;
+    height: 100%; 
+}
+
+h2 {
+    color:green;
+}
+
+.magic1 {
+    color: yellow;
+}
+
+a {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+    color: white;
+}
+
+button {
+    color:yellow;
+    border-bottom:1px solid red;
+    border-left:1px solid orange;
+    border-top:1px solid yellow;
+    border-right:1px solid green;
+}
+
+button:hover {
+    background: yellow;
+    color:red;
+}
+
+.magic5 {
+    margin-top: 15px;
+}
+
+.magic5 a {
+    color:orange;
+}
+
+.contiene {
+    height: 100%;
+    background-image: url(../../../../assets/images/estrellas.jpg);
+}
+

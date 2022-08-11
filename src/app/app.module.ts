@@ -25,9 +25,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BotonLoginComponent } from './components/login/boton-login/boton-login.component';
-import { LoginComponent } from './components/login/login/login.component';
+/*
+import { LoginComponent } from './components/login/login/login.component';*/
+
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { InterceptorService } from './services/interceptor.service';
+import { interceptorProvider } from './interceptors/interceptor.service';
+
+
+import { IniciarSesionComponent } from './components/login/iniciar-sesion/iniciar-sesion.component';
+
 
 
 
@@ -47,8 +53,8 @@ import { InterceptorService } from './services/interceptor.service';
     BotonAgregarComponent,
     FooterComponent,
     BotonLoginComponent,
-    LoginComponent,
     PortfolioComponent,
+    IniciarSesionComponent
   ],
 
   imports: [
@@ -60,7 +66,7 @@ import { InterceptorService } from './services/interceptor.service';
     ReactiveFormsModule    
   ],
   
-  providers: [{provide: HTTP_INTERCEPTORS,useClass:InterceptorService, multi:true}],
+  providers: [interceptorProvider],
   
   bootstrap: [AppComponent]
 })
