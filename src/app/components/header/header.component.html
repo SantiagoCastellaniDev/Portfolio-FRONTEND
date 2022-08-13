@@ -17,16 +17,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2">
-                <img id="" class="foto-perfil" [src]="perso.img_perfil">
-                <app-boton-editar id="editar-foto-perfil" data-bs-toggle="modal" data-bs-target="#editFotoPerfil" (click)="editableId(perso.id,perso)"></app-boton-editar>
+                <img id="" class="foto-perfil" [src]="perso.img_perfil">                
             </div>
             <div id="about" class="col-md-9">
                 <h2 class="">Sobre mí</h2>
                 <p>{{perso.descripcion}}</p>
-            </div>
-            <div class="botones col-md-1">
-                <app-boton-editar id="editar-descrpcion" data-bs-toggle="modal" data-bs-target="#editDescripcion" (click)="editableId(perso.id,perso)"></app-boton-editar>
-            </div>
+            </div>            
         </div>
     </div>
 </section>

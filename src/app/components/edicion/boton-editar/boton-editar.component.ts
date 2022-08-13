@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-boton-editar',
@@ -9,10 +10,17 @@ import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 export class BotonEditarComponent implements OnInit {
 
   faPencilAlt = faPencilAlt;
-
-  constructor() { }
+  isAdmin = false;
+  roles: string[]=[];
+  
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
-
 }
