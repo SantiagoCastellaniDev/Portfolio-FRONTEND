@@ -1,8 +1,8 @@
 
 
 export class Educacion {
-/*
-    idEdu?: number*/
+
+    /*idEdu?: number*/
     tituloEdu: string;
     fechaEdu: string;
     institucionEdu: string;
@@ -19,18 +19,3 @@ export class Educacion {
         this.img_LogoEdu = img_LogoEdu;
     }
 }
-
-/*
-export interface Educacion {
-
-    idEdu?: number;
-    tituloEdu: string;
-    fechaEdu: string;
-    institucionEdu: string;
-    descripcionEdu: string;
-    img_LogoEdu: string;
-    
-    
-}*/
-
-

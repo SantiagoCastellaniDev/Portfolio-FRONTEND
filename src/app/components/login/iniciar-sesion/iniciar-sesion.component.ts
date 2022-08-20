@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './iniciar-sesion.component.html',
   styleUrls: ['./iniciar-sesion.component.css']
 })
+
 export class IniciarSesionComponent implements OnInit {
 
   isLogged = false;
@@ -18,13 +19,23 @@ export class IniciarSesionComponent implements OnInit {
   nombreUsuario: string="";
   password: string="";
   roles: string[] = [];
-  errMsj: string="";
+  errMsj: string="";/*
+  formLogin:FormGroup;*/
+  formBuilder: any;
+  errors:any;
 
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) {/*
+    this.formLogin = this.formBuilder.group(
+      {
+        nombreUsuario:['',[Validators.required,Validators.minLength(4)]],
+        password:['',[Validators.required,Validators.minLength(8)]]
+      }
+    )*/
+    }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
@@ -33,11 +44,22 @@ export class IniciarSesionComponent implements OnInit {
       this.roles = this.tokenService.getAuthorities();
     }
   }
+/*
+  get NombreUsuario (){
+    return this.formLogin.get("nombreUsuario");
+  }
+
+  get Password (){
+    return this.formLogin.get("password");
+  }
+  
+*/
 
   // LOGIN : INICIAR SESION
   onLogin(): void {
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
-    this.authService.login(this.loginUsuario).subscribe(
+    this.authService.login(this.loginUsuario).subscribe(/*
+    this.authService.login(this.formLogin.value).subscribe(*/
       data => {
         this.isLogged = true;        
         this.tokenService.setToken(data.token);

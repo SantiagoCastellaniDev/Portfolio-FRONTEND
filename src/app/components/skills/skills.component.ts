@@ -50,7 +50,6 @@ export class SkillsComponent implements OnInit {
   newColorSkill: any
   newImg_Skill: any;
   editableSkill: Skill[]=[];
- 
   
 
   constructor(private skillService:SkillService) { }
@@ -120,8 +119,8 @@ export class SkillsComponent implements OnInit {
 
   //BOTON abrir modal: Capturar Id y experiencia
   trashId(id:any,skill: Skill[]): void{
-    this.borrarId = id;   
-    console.log(this.borrarId);  
+    this.borrarId = id;
+    this.editableSkill = skill;
   }
   
   //BOTON ELIMINAR EDUCACION

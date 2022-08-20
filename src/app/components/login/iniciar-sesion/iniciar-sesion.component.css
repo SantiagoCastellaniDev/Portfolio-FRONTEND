@@ -34,6 +34,7 @@ button {
     border-left:1px solid orange;
     border-top:1px solid yellow;
     border-right:1px solid green;
+    margin-top:20px;
 }
 
 button:hover {
@@ -49,8 +50,12 @@ button:hover {
     color:orange;
 }
 
-.contiene {
+.all {
     height: 100%;
     background-image: url(../../../../assets/images/estrellas.jpg);
 }
 
+label {
+    color: white;
+    margin-top: 5px;
+}

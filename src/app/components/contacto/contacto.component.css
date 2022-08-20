@@ -1,0 +1,32 @@
+.contacto {
+    width:50%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+
+.titular {
+    color: lightblue; 
+    margin-bottom: 15px;
+}
+
+.titular:after {
+    background:yellow;
+}
+
+a {
+    margin: 20px;
+    font-size: 30px;
+    color: grey;
+}
+
+a:hover {
+    color: yellow;
+}
+
+p {
+    color: grey;
+    font-size: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

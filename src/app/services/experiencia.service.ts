@@ -11,8 +11,10 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-
+/*
   experienciaURL = "http://localhost:8080/experiencia/";
+*/
+  experienciaURL = "https://scdev-backend.herokuapp.com/experiencia/";
   
 
   constructor(private http:HttpClient) { }

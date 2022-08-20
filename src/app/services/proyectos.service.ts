@@ -9,8 +9,10 @@ import { Proyecto } from '../model/proyecto';
 })
 
 export class ProyectosService {
-
+/*
   proyectoURL = "http://localhost:8080/proyecto/";
+*/
+  proyectoURL = "https://scdev-backend.herokuapp.com/proyecto/";
 
   constructor(private http:HttpClient) { }
 

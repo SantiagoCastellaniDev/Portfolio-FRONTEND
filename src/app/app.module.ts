@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 
 
 import { HeaderComponent } from './components/header/header.component';
-import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavComponent } from './components/nav/nav.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { BotonEditarComponent } from './components/edicion/boton-editar/boton-editar.component';
@@ -25,9 +25,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BotonLoginComponent } from './components/login/boton-login/boton-login.component';
-/*
-import { LoginComponent } from './components/login/login/login.component';*/
-
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { interceptorProvider } from './interceptors/interceptor.service';
 
@@ -41,13 +38,13 @@ import { IniciarSesionComponent } from './components/login/iniciar-sesion/inicia
   declarations: [
     AppComponent,
     HeaderComponent,
-    AcercaDeComponent,
     NavComponent,
     EducacionComponent,
     ExperienciaComponent,
     ProyectosComponent,
     SidebarComponent,
     SkillsComponent,
+    ContactoComponent,
     BotonEditarComponent,
     BotonBorrarComponent,
     BotonAgregarComponent,

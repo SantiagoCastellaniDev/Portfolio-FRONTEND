@@ -1,3 +1,5 @@
+<!---------SECCION SKILLS-------------->
+
 <section id="skills" class="recuadro">
     <div class="container-fluid seccion">
       <!-------TITULO DE SECCION------->
@@ -14,7 +16,7 @@
         <!------------------------->
       <div class="row container-fluid" *ngFor="let skill of skills">
         <div class="skills col-xs-10 col-md-5">
-          <fa-icon [icon]="faJs" [style.color]="skill.colorSkill"></fa-icon>
+          <span><i class="{{skill.img_Skill}}"[style.color]="skill.colorSkill"></i></span>
           <span [style.color]="skill.colorSkill">{{skill.nombreSkill}}</span>
           <div class="btn-edicion">
             <app-boton-editar data-bs-toggle="modal" data-bs-target="#editSkill" (click)="editableId(skill.idSkill,skill)"></app-boton-editar>
@@ -31,7 +33,9 @@
       <!------------Soft Skills---------------->
 
       <div  id="soft-skills">
+        <!-----
           <app-boton-agregar></app-boton-agregar>
+         -->
           <h4>Soft Skills / Cualidades</h4>          
       </div>
         <!------------------------->
@@ -41,8 +45,10 @@
             <div class="nombre-habilidad">
               <span>Trabajo en equipo</span>
               <div class="btn-edicion">
+                <!-----
                 <app-boton-editar></app-boton-editar>
                 <app-boton-borrar></app-boton-borrar> 
+                --->
               </div>            
             </div>
             <div class="progress">               
@@ -53,8 +59,10 @@
           <div class="skills col-9">
             <span>Comunicación efectiva</span>
             <div class="btn-edicion">
+              <!------
               <app-boton-editar></app-boton-editar>
               <app-boton-borrar></app-boton-borrar> 
+              --->
             </div> 
             <div class="progress">               
               <div class="progress-bar bg-success" role="progressbar" style="width: 97%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -64,8 +72,10 @@
           <div class="skills col-9">
             <span>Resiliencia</span>
             <div class="btn-edicion">
+              <!------
               <app-boton-editar></app-boton-editar>
-              <app-boton-borrar></app-boton-borrar> 
+              <app-boton-borrar></app-boton-borrar>
+              ---> 
             </div> 
             <div class="progress">               
               <div class="progress-bar bg-success" role="progressbar" style="width: 97%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -75,8 +85,10 @@
           <div class="skills col-9">
             <span>Resolución de problemas</span>
             <div class="btn-edicion">
+              <!------
               <app-boton-editar></app-boton-editar>
               <app-boton-borrar></app-boton-borrar> 
+              --->
             </div> 
             <div class="progress">               
               <div class="progress-bar bg-success" role="progressbar" style="width: 97%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -111,19 +123,66 @@
               </div>
               <div class="form-group">
                   <label for="nivelSkill" class="form-label">Nivel o conocimiento de la herramienta</label>
-                  <input id="nivelSkill" type="text" name="nivelSkill" class="form-control" [(ngModel)]="newNivelSkill" required>
+                  <!------
+                  <input id="nivelSkill" type="text" name="nivelSkill" class="form-control" [(ngModel)]="newNivelSkill" required>--->
+                  <select id="nivelSkill" type="text" name="nivelSkill" class="form-control" [(ngModel)]="newNivelSkill" required>
+                    <option value="Básico">Básico</option>
+                    <option value="Intermedio">Intermedio</option>
+                    <option value="Avanzado">Avanzado</option>
+                  </select>
               </div>
               <div class="form-group">
                   <label for="porcentajeSkill" class="form-label">Porcentaje</label>
-                  <input id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>
+                  <!------
+                  <input id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>--->
+                  <select id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>
+                    <option value=10>10</option>
+                    <option value=20>20</option>
+                    <option value=30>30</option>
+                    <option value=40>40</option>
+                    <option value=50>50</option>
+                    <option value=60>60</option>
+                    <option value=70>70</option>
+                    <option value=80>80</option>
+                    <option value=90>90</option>
+                    <option value=100>100</option>
+                </select>
               </div>
               <div class="form-group">
                   <label for="descripcionEdu" class="form-label">Color de la barra de progreso y skill</label>
-                  <input id="colorSkill" type="color-text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
+                  <!-----
+                  <input id="colorSkill" type="color-text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">--->
+                  <select id="colorSkill" type="text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
+                    <option value="red">Rojo</option>
+                    <option value="orangered">Naranja</option>
+                    <option value="yellow">Amarillo</option>
+                    <option value="green">Verde</option>
+                    <option value="lightblue">Celeste</option>
+                    <option value="blue">Azul</option>
+                    <option value="purple">Violeta</option>
+                    <option value="brown">Marrón</option>
+                    <option value="pink">Rosa</option>
+                  </select>
               </div>
               <div class="form-group">
-                  <label for="img_Skill" class="form-label">Icono de la herramienta</label>
-                  <input id="img_Skill" type="text" name="img_Skill" class="form-control" [(ngModel)]="newImg_Skill">
+                  <label for="img_Skill" class="form-label">Icono de la herramienta</label><!-----
+                  <input id="img_Skill" type="text" name="img_Skill" class="form-control" [(ngModel)]="newImg_Skill">--->
+                  <select id="img_Skill" type="text" name="img_Skill" class="form-control" [(ngModel)]="newImg_Skill">
+                    <option value="fa-brands fa-html5">HTML</option>
+                    <option value="fa-brands fa-css3-alt">CSS</option>
+                    <option value="fa-brands fa-js">Javascript</option>
+                    <option value="fa-brands fa-bootstrap">Bootstrap</option>
+                    <option value="fa-brands fa-java">Java</option>
+                    <option value="fa-light fa-hexagon">SpringBoot</option>
+                    <option value="fa-solid fa-database">MySQL</option>
+                    <option value="fa-light fa-atom">React</option>
+                    <option value="fa-brands fa-angular">Angular</option>
+                    <option value="fa-light fa-text">Typescript</option>
+                    <option value="fa-brands fa-github">GitHub</option>
+                    <option value="fa-brands fa-git">Git</option>
+                    <option value="fa-brands fa-php">PHP</option>
+                    <option value="fa-light fa-code">C++</option>
+                </select>
               </div>
           </div>
           <div class="modal-footer">
@@ -153,19 +212,72 @@
           </div>
           <div class="form-group">
               <label for="nivelSkill" class="form-label">Nivel o conocimiento de la herramienta</label>
-              <input id="nivelSkill" type="text" name="nivelSkill" class="form-control" [(ngModel)]="newNivelSkill" required>
+              <!-----
+              <input id="nivelSkill" type="text" name="nivelSkill" class="form-control" [(ngModel)]="newNivelSkill" required>--->
+
+              <select id="nivelSkill" type="text" name="nivelSkill" class="form-control" [(ngModel)]="newNivelSkill" required>
+                <option value="Básico">Básico</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzado">Avanzado</option>
+              </select>
           </div>
           <div class="form-group">
               <label for="porcentajeSkill" class="form-label">Porcentaje</label>
-              <input id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>
+              <!-----
+              <input id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>--->
+
+              <select id="porcentajeSkill" type="number" name="porcentajeSkill" class="form-control" [(ngModel)]="newPorcentajeSkill" required>
+                <option value=10>10</option>
+                <option value=20>20</option>
+                <option value=30>30</option>
+                <option value=40>40</option>
+                <option value=50>50</option>
+                <option value=60>60</option>
+                <option value=70>70</option>
+                <option value=80>80</option>
+                <option value=90>90</option>
+                <option value=100>100</option>
+            </select>
+
+
+
           </div>
           <div class="form-group">
               <label for="descripcionEdu" class="form-label">Color de la barra de progreso y skill</label>
-              <input id="colorSkill" type="text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
+              <!------
+              <input id="colorSkill" type="text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">--->
+              <select id="colorSkill" type="text" name="colorSkill" class="form-control" [(ngModel)]="newColorSkill">
+                <option value="red">Rojo</option>
+                <option value="orangered">Naranja</option>
+                <option value="yellow">Amarillo</option>
+                <option value="green">Verde</option>
+                <option value="lightblue">Celeste</option>
+                <option value="blue">Azul</option>
+                <option value="purple">Violeta</option>
+                <option value="brown">Marrón</option>
+                <option value="pink">Rosa</option>
+              </select>
           </div>
           <div class="form-group">
               <label for="img_Skill" class="form-label">Icono de la herramienta</label>
-              <input id="img_Skill" type="text" name="img_Skill" class="form-control" [(ngModel)]="newImg_Skill">
+              <!------
+              <input id="img_Skill" type="text" name="img_Skill" class="form-control" [(ngModel)]="newImg_Skill">--->
+              <select id="img_Skill" type="text" name="img_Skill" class="form-control" [(ngModel)]="newImg_Skill">
+                <option value="fa-brands fa-html5">HTML</option>
+                <option value="fa-brands fa-css3-alt">CSS</option>
+                <option value="fa-brands fa-js">Javascript</option>
+                <option value="fa-brands fa-bootstrap">Bootstrap</option>
+                <option value="fa-brands fa-java">Java</option>
+                <option value="fa-light fa-hexagon">SpringBoot</option>
+                <option value="fa-solid fa-database">MySQL</option>
+                <option value="fa-light fa-atom">React</option>
+                <option value="fa-brands fa-angular">Angular</option>
+                <option value="fa-light fa-text">Typescript</option>
+                <option value="fa-brands fa-github">GitHub</option>
+                <option value="fa-brands fa-git">Git</option>
+                <option value="fa-brands fa-php">PHP</option>
+                <option value="fa-light fa-code">C++</option>
+            </select>
           </div>
           </div>
           <div class="modal-footer">
@@ -189,8 +301,7 @@
       <form (ngSubmit)="eliminarSkill()">
           <div class="modal-body">
               <div>
-                  <label for="itemTitle" class="form-label">¿Esta seguro que desa eliminar esta skill?</label>
-                  <input id="itemTitle" type="text" class="form-control">
+                  <h5>¿Desea eliminar esta skill?</h5>
               </div>
           </div>
           <div class="modal-footer">

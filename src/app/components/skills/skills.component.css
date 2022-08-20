@@ -52,6 +52,8 @@ fa-icon, span, .btn-edicion {
 }
 
 /*-------Clases de colores para hard skills---------*/
+
+
 .bg-orangered {
     background: orangered;
 }
@@ -73,6 +75,13 @@ fa-icon, span, .btn-edicion {
 .bg-pink {
     background: salmon;
 }
+.bg-lightblue {
+    background: lightblue;
+}
+.bg-brown {
+    background:brown;
+}
+
 
 fa-icon, span {
     margin: 5px;
