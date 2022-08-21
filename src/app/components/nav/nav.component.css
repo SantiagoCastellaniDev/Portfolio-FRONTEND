@@ -42,8 +42,7 @@ ul li {
 
 ul li a {
   color:white;
-  font-size: 20px;/*
-  z-index: 1999;*/
+  font-size: 20px;
 }
 
 ul li a:hover {
@@ -53,19 +52,16 @@ ul li a:hover {
 
 /*--------BOTON LOGIN-------*/
 
-.btn-login {
-  color: white;
-  background:green;
-  border-radius: 100%;
+.boton-login {
   margin-left: 3px;
-  margin-right: 57px;
+  margin-right: 200px;
 }
-
+/*
 .btn-login:hover {
   color: black;
   background: yellow;
 }
-
+*/
 
 @media (max-width: 592px) {
   .span2 {display:none}

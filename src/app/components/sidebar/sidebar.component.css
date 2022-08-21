@@ -92,6 +92,9 @@ app-boton-login {
 
 /*----EFECTOS EN SIDEBAR------*/
 
+a:hover{
+  cursor: pointer;
+}
 
 #li-home:hover {
   color: red;

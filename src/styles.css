@@ -1,3 +1,8 @@
+
+:root {
+    scroll-behavior: smooth;
+}
+
 /*------Recuadro de secciones--------*/
 
 .recuadro {
@@ -65,4 +70,8 @@ app-boton-borrar, app-boton-editar {
     border-left:4px solid orange;
     border-top:4px solid yellow;
     border-right:4px solid green;    
+}
+
+html {
+    scroll-behavior: smooth;
 }

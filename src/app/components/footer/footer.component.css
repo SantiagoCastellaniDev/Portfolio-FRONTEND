@@ -24,7 +24,8 @@ footer {
 }
 
 .up fa-icon:hover {
-    color: yellow
+    color: yellow;
+    cursor: pointer;
 }
 
 .row {

@@ -21,4 +21,9 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  scrollTo(seccion: string) {
+    window.location.hash = '';
+    window.location.hash = seccion;   
+  }
+
 }

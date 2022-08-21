@@ -30,4 +30,11 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  /*------NAVEGAR A SECCION------*/
+  scrollTo(seccion: string) {
+    window.location.hash = '';
+    window.location.hash = seccion;   
+  }
+
 }

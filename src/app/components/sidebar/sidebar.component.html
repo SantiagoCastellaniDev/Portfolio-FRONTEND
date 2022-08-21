@@ -13,25 +13,25 @@
         <div class="offcanvas-body" id="barra-lateral">
             <ul>
                 <li>
-                    <a href="#navegacion" id="li-home"><fa-icon class="simbol" [icon]="faHome"></fa-icon>HOME</a>
+                    <a (click)="scrollTo('navegacion')" id="li-home"><fa-icon class="simbol" [icon]="faHome"></fa-icon>HOME</a>
                 </li>
                 <li>
-                    <a href="#acerca-de" id="li-acerca-de"><fa-icon class="simbol" [icon]="faSeedling"></fa-icon>SOBRE MI</a>
+                    <a (click)="scrollTo('acerca-de')" id="li-acerca-de"><fa-icon class="simbol" [icon]="faSeedling"></fa-icon>SOBRE MI</a>
                 </li>
                 <li>
-                    <a href="#experiencia" id="li-experiencia"><fa-icon class="simbol" [icon]="faSplotch"></fa-icon>EXPERIENCIA</a>
+                    <a (click)="scrollTo('experiencia')" id="li-experiencia"><fa-icon class="simbol" [icon]="faSplotch"></fa-icon>EXPERIENCIA</a>
                 </li>
                 <li>
-                    <a href="#educacion" id="li-educacion"><fa-icon class="simbol" [icon]="faBookOpen"></fa-icon>EDUCACION</a>
+                    <a (click)="scrollTo('educacion')" id="li-educacion"><fa-icon class="simbol" [icon]="faBookOpen"></fa-icon>EDUCACION</a>
                 </li>
                 <li>
-                    <a href="#proyectos" id="li-proyectos"><fa-icon class="simbol" [icon]="faLaptopCode"></fa-icon>PROYECTOS</a>
+                    <a (click)="scrollTo('proyectos')" id="li-proyectos"><fa-icon class="simbol" [icon]="faLaptopCode"></fa-icon>PROYECTOS</a>
                 </li>
                 <li>
-                    <a href="#skills" id="li-skills"><fa-icon class="simbol" [icon]="faCube"></fa-icon>HERRAMIENTAS</a>
+                    <a (click)="scrollTo('skills')" id="li-skills"><fa-icon class="simbol" [icon]="faCube"></fa-icon>HERRAMIENTAS</a>
                 </li>
                 <li>
-                    <a href="#contacto" id="li-contacto"><fa-icon class="simbol" [icon]="faCommentAlt"></fa-icon>CONTACTO</a>
+                    <a (click)="scrollTo('contacto')" id="li-contacto"><fa-icon class="simbol" [icon]="faCommentAlt"></fa-icon>CONTACTO</a>
                 </li>
                 <li class="btn-login">
                     <app-boton-login routerLink="/login"></app-boton-login>
