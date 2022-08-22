@@ -1,4 +1,4 @@
-/*---PROYECTOS---*/   /*****REVISAR MEDIA QUERY----*/
+/*---PROYECTOS---*/   
 
 /*-----Detalles de titulo-------*/
 .titular {
@@ -8,24 +8,25 @@
     background: purple;
 }
 
-h3, .botones {
+h3 {
     display: inline;
 }
 
 
 /*---------CONTENEDOR DE PROYECTOS-------*/
-
+/*
 .col-1 {
     z-index:900;
 }
+*/
 app-boton-editar, app-boton-borrar {
-    float: right;
-    z-index: 998;
+    margin-left:10px;
+    margin-right: 10px;
 }
 
 .proyecto {
-    position:relative;
-    max-width:1000px;
+    position:relative;/*
+    max-width:1000px;*/
     margin:0 auto 30px auto;
     overflow:hidden;
     background: black;
@@ -51,22 +52,22 @@ p {
     margin:0 0 15px 0;
     font-size:0.9em
 }
-
-.no-image .data-proyecto{position:relative;margin:0;padding:30px 15px;transform:none}
 /*
-.background-alt{background:black}*/
+.no-image .data-proyecto{position:relative;margin:0;padding:30px 15px;transform:none}*/
 
-@media only screen and (max-width: 900px) {
+/*
+@media only screen and (max-width: 992px) {
     .imagen-proyecto{display:none}
     .data-proyecto{position:relative;margin:0;padding:30px 15px;top:auto;transform:none}
-}
-
+    .img{width:50px;height:auto}
+}*/
+/*
 .imagen-proyecto img {
     position:relative;
     float:left;
     right:12px;
     object-fit: contain;
-}
+}*/
 
 /*ESTILOS DE MODALES DE EDICION*/
 
@@ -122,4 +123,35 @@ label {
 }
 .btn-secondary {
     float:right;
+}
+
+/*
+.imagenproyecto {
+    display: flex;
+}
+*/
+
+/* NUEVOS ESTILOS */
+
+.img-project {
+    display:inline-block;
+    max-width:300px;
+    margin-top:15px;
+    margin-bottom:9px;
+}
+
+
+.info-project {
+    padding:10px;
+    color: white;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .img-project{width:200px;height:auto}
+}
+
+
+@media only screen and (max-width: 385px) {
+    .img-project{width:135px;height:auto}
 }

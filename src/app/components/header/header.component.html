@@ -1,9 +1,9 @@
 <!---------SECCION PERFIL---------------->
 
 <header id="header" *ngFor="let perso of datospersona">
-    <!----BANNER------>
+    <!---BANNER------>
     <img class="img-responsive" id="banner" [src]="perso.img_banner" alt="banner">   
-    <!----CARTEL------> 
+    <!----CARTEL------>
     <div id="lead">
         <div id="cartel" class="lead-content">
             <h1>{{perso.nombre}} {{perso.apellido}}</h1>
@@ -12,6 +12,7 @@
         </div>
     </div>
 </header>
+
 
 <!------ACERCA DE----->
 

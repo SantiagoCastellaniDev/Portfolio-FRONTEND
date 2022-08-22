@@ -11,16 +11,16 @@
         <!----BLOQUE EDUCATIVO----->
         <article class="container bloque-educativo" *ngFor="let edu of educacion">
             <div class="row">
-                <div class="col-1">
+                <div class="col-xs-2 col-sm-2 col-md-2">
                     <img class="imagen-logo" [src]="edu.img_LogoEdu" alt="">
                 </div>
-                <div class="container data-educacion col-10">
+                <div class="container data-educacion col-xs-8 col-sm-8 col-md-8">
                     <h3>{{edu.tituloEdu}}</h3>                    
                     <span>{{edu.fechaEdu}}</span>
                     <h4>{{edu.institucionEdu}}</h4>
                     <p>{{edu.descripcionEdu}}</p>
                 </div>
-                <div class="col-1">
+                <div class="botones col-xs-2 col-sm-2 col-md-2">
                     <app-boton-editar data-bs-toggle="modal" data-bs-target="#editEducacion" (click)="editableId(edu.idEdu,edu)"></app-boton-editar>
                     <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteEducacion" (click)="trashId(edu.idEdu,edu)"></app-boton-borrar>
                 </div>

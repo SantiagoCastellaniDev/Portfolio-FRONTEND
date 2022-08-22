@@ -1,5 +1,6 @@
 /*-----EDUCACION--------*/
 
+
 /*-------Detalles del titulo-------*/
 
 .titular {
@@ -34,7 +35,6 @@ article {
 
 article h3 {
     font-size: 20px;
-    text-align:left;
     margin:0;
     color:white;
     padding:0;
@@ -139,4 +139,18 @@ label {
 }
 .btn-secondary {
     float:right;
+}
+
+
+@media only screen and (max-width: 580px) {
+    .data-educacion,.botones {
+        text-align:center;
+    }
+    app-boton-editar, app-boton-borrar {
+        padding: 5px;
+        margin:5px;        
+    }
+    .imagen-logo {
+        margin-top: 19px;
+    }
 }

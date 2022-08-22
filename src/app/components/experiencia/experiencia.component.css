@@ -25,22 +25,27 @@
 }
 
 .imagen-experiencia {
-    max-width: 50px;
-    max-height: 50px;
+    max-width:100px;
+    height:50px;
+    margin-top:15px;
+    margin-bottom:9px;
+    display: inline-block;
 }
+
 hr {
     border: 1px solid white;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 .data-experiencia {
-    text-align: left;
+    text-align:left;
     margin: 0 auto;
     padding:0 auto;
 }
 
 h3 {
     font-size: 20px;
-    text-align:left;
     margin:0;
     padding:0;
 }
@@ -49,18 +54,21 @@ h3 {
     font-size: 15px;
     padding: 0;
     margin:0;
+    color:grey;
 }
 
 .data-experiencia h4 {
     font-size: 15px;
     padding:0 auto;
     margin:0 auto;
+    color:grey;
 }
 
 .data-experiencia p {
     font-size: 15px;
     padding:0 auto;
     margin:0 auto;
+    color:grey;
 }
 
 /*ESTILOS DE MODALES DE EDICION*/
@@ -117,4 +125,10 @@ label {
 }
 .btn-secondary {
     float:right;
+}
+
+@media only screen and (max-width: 800px) {
+    .data-experiencia {
+        text-align:center;
+    }
 }

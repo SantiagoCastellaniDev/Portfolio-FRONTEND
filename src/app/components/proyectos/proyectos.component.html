@@ -10,31 +10,64 @@
         
 
         <!-----BLOQUE DE PROYECTOS------>
+        <!----
         <div class="container row" *ngFor="let proyecto of proyectos">
             <hr>
-            <div class="col-11">
-                <div class="proyecto shadow-large">
-                    <!----Imagen de proyecto---->
+            <div class="">
+                <div class="proyecto shadow-large">-->
+                <!----Imagen de proyecto----><!---
                     <div class="imagen-proyecto">
                         <img [src]="proyecto.img_Project"/>
-                    </div>
-                    <!----Informacion de proyecto---->                                   
+                    </div>--->
+                <!----Informacion de proyecto---->       <!----                       
                     <div class="data-proyecto">
                         <h3><b>{{proyecto.nombreProject}}</b></h3>                                                    
                         <br>
                         <span>{{proyecto.fechaProject}}</span>
                         <h4>{{proyecto.puestoProject}}</h4>
-                        <p>{{proyecto.descripcionProject}}</p>
-                        <a href="#">Ver proyecto</a>
+                        <p>{{proyecto.descripcionProject}}</p>--->
+                    <!--<a href="#">Ver proyecto</a>---><!----
                     </div>                        
                 </div>
             </div>
-            <div class="col-1">
+            <div class="">
+                <app-boton-editar data-bs-toggle="modal" data-bs-target="#editProyecto" (click)="editableId(proyecto.idProject,proyecto)"></app-boton-editar>
+                <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteProyecto" (click)="trashId(proyecto.idProject,proyecto)"></app-boton-borrar>                    
+            </div>                
+            <hr>
+        </div>
+
+        <h2>PROBANDO NUEVA VERSION DE ESTILOS</h2>--->
+
+        <!-----BLOQUE DE PROYECTOS------>
+
+        <div class="container" *ngFor="let proyecto of proyectos">
+            <hr>
+            <div class="">
+                <div class="row">
+                    <!----Imagen de proyecto---->
+                    <div class="container">
+                        <img class="img-project" [src]="proyecto.img_Project"/>
+                    </div>     
+                    <!----Informacion de proyecto---->            
+                    <div class="info-project container col-xs-12 col-sm-6 col-md-8">                                                     
+                        <h3><b>{{proyecto.nombreProject}}</b></h3>                                                    
+                        <br>
+                        <span>{{proyecto.fechaProject}}</span>
+                        <h4>{{proyecto.puestoProject}}</h4>
+                        <p>{{proyecto.descripcionProject}}</p>
+                    <!--<a href="#">Ver proyecto</a>--->
+                    </div>                                     
+                </div>
+            </div>
+            <div class="">
                 <app-boton-editar data-bs-toggle="modal" data-bs-target="#editProyecto" (click)="editableId(proyecto.idProject,proyecto)"></app-boton-editar>
                 <app-boton-borrar data-bs-toggle="modal" data-bs-target="#deleteProyecto" (click)="trashId(proyecto.idProject,proyecto)"></app-boton-borrar>                    
             </div>                
             <hr>
         </div>            
+
+
     </div>
 </section>
 
