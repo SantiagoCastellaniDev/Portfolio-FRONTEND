@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -18,23 +17,9 @@ export class ContactoComponent implements OnInit {
   faGithub = faGithub;
   faLinkedin = faLinkedin;
 
-  mensajeForm: FormGroup;
-
-  constructor(formBuilder: FormBuilder) {    
-    this.mensajeForm = formBuilder.group({
-      nombre: "",
-      email: "",
-      mensaje:"",
-      telefono:""
-  })
-   }
+   constructor() {}
 
   ngOnInit(): void {
   }
-
-  mensaje() {
-    this.mensajeForm.reset();
-    console.log(this.mensajeForm)
-}
 
 }

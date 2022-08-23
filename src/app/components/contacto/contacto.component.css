@@ -81,3 +81,13 @@ ul {
     margin: 20px 0px 0px;
     padding:0px 0px 0px 0px;
 }
+
+
+@media only screen and (max-width: 630px) {
+    #mensajeForm {width:75%;}
+}
+
+
+@media only screen and (max-width: 420px) {
+    #mensajeForm {width:90%;}
+}
