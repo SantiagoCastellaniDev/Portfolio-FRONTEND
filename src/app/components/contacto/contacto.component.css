@@ -3,6 +3,11 @@
     justify-content: center;
     margin: 0 auto;
     margin-bottom: 40px;
+    align-items: center;
+}
+
+.seccion{
+    padding-bottom: 30px;
 }
 
 
@@ -26,7 +31,53 @@ a:hover {
 }
 
 p {
-    color: grey;
-    font-size: 15px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#mensajeForm {
+    width:50%;
+    align-self:center;
+    margin:0 auto;
+
+}
+
+label {
+    color:grey;
+}
+input {
+    margin-bottom: 10px;
+}
+
+#colorGame {
+    color: yellow;
+    font-size: 20px; 
+}
+#invitacion {
+    color: burlywood;
+    font-size: 15px; 
+}
+button {
+    margin-top:15px;
+    margin-bottom: 30px;
+    width:100px;
+    background:black;
+    color: yellow;
+    border-bottom:1px solid red;
+    border-left:1px solid orange;
+    border-top:1px solid yellow;
+    border-right:1px solid green;
+}
+button:hover {
+    background:green;
+    color: orange;
+    border: 1px solid yellow;
+}
+
+.links{
+    margin-top:20px;
+    margin-bottom: 10px;
+}
+ul {
+    margin: 20px 0px 0px;
+    padding:0px 0px 0px 0px;
 }

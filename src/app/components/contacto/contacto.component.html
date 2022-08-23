@@ -6,16 +6,50 @@
            <h2 class="titular">Contacto</h2> 
         </div>        
         <div class="container bloque-contacto">
-            <p>Abierto a formar parte de proyectos que sumen a mi aprendizaje. Me puedes contactar en las siguientes redes:</p>
+            <p id="colorGame">Abierto a formar parte de proyectos que sumen a mi aprendizaje y experiencia.</p>
+            <p id="invitacion">Me puedes escribir y dejar un mensaje en el siguiente formulario:</p>
         </div>
-        <div>
+
+        <div class="row">
+            <form ngNoForm action="https://formsubmit.co/4ed1e802380c4456e54103f37482db93" method="POST" id="mensajeForm">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y apellido" required> 
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email de contacto" required>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Mensaje</label>
+                        <input type="text" class="form-control" id="mensaje" name="mensaje" placeholder="Deja aquí tu mensaje..." required>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Teléfono (opcional)</label>
+                        <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Numero telefónico (opcional)">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" onclick="mensaje()" id="boton-enviar" class="btn btn-primary full-width"><b>Enviar</b></button>
+                </div>
+            </form>                     
+        </div>
+        <p id="invitacion">Visita mis redes:</p>
+        <div class="links">
             <ul>
                 <li class="list-inline-item vin">
                     <a href="https://github.com/SantiagoCastellaniDev" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
                 </li>
                 <li class="list-inline-item vin">
                     <a href="https://linkedin.com/in/santiagocastellani" target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a>
-                </li>                               
+                </li>
             </ul>
         </div>
     </div>
