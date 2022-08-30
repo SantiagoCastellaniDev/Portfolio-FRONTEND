@@ -62,12 +62,12 @@
 }
 
 h2 {
-  color: yellow; 
+  color: rgb(197, 183, 183); 
   margin:10px
 }
 
 p {
-  color: yellow;
+  color: rgb(197, 183, 183);
   margin:10px;
 }
 
@@ -126,4 +126,27 @@ p {
 
 .modal-borrar {
   background: red;  
+}
+
+
+@media only screen and (max-width: 765px) {
+  .foto-perfil{
+    position:static;
+    margin:25px;
+  }
+}
+
+
+@media only screen and (max-width: 510px) {
+  .foto-perfil{
+    position:static;
+    margin-top:75px;
+  }  
+}
+
+@media only screen and (max-width: 390px) {
+  .foto-perfil{
+    position:static;
+    margin-top:120px;
+  }  
 }

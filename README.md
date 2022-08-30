@@ -1,4 +1,25 @@
-# PortfolioFrontend
+# PortfolioFrontend Santiago Castellani (VERSION 1.0)
+
+Este es el primer proyecto que realizo en mi formación de Desarrollador Web Full Stack, como trabajo práctico para el programa Argentina Programa, #YO PROGRAMO.
+
+Se que hay mucho para perfeccionar o evolucionar en el proyecto en materia de código y estilo, asi que este trabajo puede ser considerado la Versión 1.0 del proyecto.
+
+Se trata del Frontend de un Portfolio Web, desarrollado en Angular, donde se puede agregar, editar y eliminar el contenido.
+
+Tiene un login con seguridad JWT, y se puede ingresar como usuario o administrador.
+
+El rol administrador, puede agregar, editar y eliminar el contenido.
+El rol usuario puede visitar el sitio, y a futuro podría agregarse algunas funcionalidades extras para dicho rol.
+
+He trabajado en una PC con windows 7, y node 12.20.0 que es la última soportada por windows 7.
+
+El frontend conecta con una API realizada en JAVA con SpringBoot, y la base de datos en MySQL.
+
+Agradezco de estar dando los primeros pasos en el mundo de la programación. 
+
+Muchas gracias.
+
+A continuación, el readme por defecto otorgado por Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
