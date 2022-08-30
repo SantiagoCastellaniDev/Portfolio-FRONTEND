@@ -28,8 +28,6 @@
     display:flexbox;
 }
 
-
-/* revisar comportamientos de botones en su momento display: none*/
 fa-icon, span, .btn-edicion {
     display: inline;
 }
