@@ -10,7 +10,7 @@ export class PersonaService {
 /*
   personaURL = "http://localhost:8080/persona/";
 */
-  personaURL = "https://scdev-backend.herokuapp.com/persona/";
+  personaURL = "https://scdev-backend2.herokuapp.com/persona/";
   
   constructor(private http:HttpClient) { }
 

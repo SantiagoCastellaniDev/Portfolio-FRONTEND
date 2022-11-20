@@ -10,7 +10,7 @@ export class EducacionService {
 /*
   educacionURL = "http://localhost:8080/educacion/";
 */  
-  educacionURL = "https://scdev-backend.herokuapp.com/educacion/";
+  educacionURL = "https://scdev-backend2.herokuapp.com/educacion/";
   
 
   constructor(private http:HttpClient) { }

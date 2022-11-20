@@ -10,7 +10,7 @@ export class SkillService {
 /*
   skillURL = "http://localhost:8080/skill/";
 */
-  skillURL = "https://scdev-backend.herokuapp.com/skill/";
+  skillURL = "https://scdev-backend2.herokuapp.com/skill/";
 
   constructor(private http:HttpClient) { }
 

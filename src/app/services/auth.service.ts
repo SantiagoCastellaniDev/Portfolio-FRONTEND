@@ -12,7 +12,7 @@ export class AuthService {
 /*
   authURL = 'http://localhost:8080/auth/';
 */
-  authURL = 'https://scdev-backend.herokuapp.com/auth/';
+  authURL = 'https://scdev-backend2.herokuapp.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 

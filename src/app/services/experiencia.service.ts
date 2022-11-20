@@ -14,7 +14,7 @@ export class ExperienciaService {
 /*
   experienciaURL = "http://localhost:8080/experiencia/";
 */
-  experienciaURL = "https://scdev-backend.herokuapp.com/experiencia/";
+  experienciaURL = "https://scdev-backend2.herokuapp.com/experiencia/";
   
 
   constructor(private http:HttpClient) { }
