@@ -22,6 +22,8 @@ export class ProyectosComponent implements OnInit {
   editableProyecto: Proyecto[]=[];
   editId: any;
   borrarId: any;
+  proyecto:Proyecto[]=[];
+  proyec:Proyecto[]=[]
 
   constructor(private proyectoService:ProyectosService) { }
 
@@ -54,9 +56,23 @@ export class ProyectosComponent implements OnInit {
 
   //Boton abrir modal: Capturar Id y proyecto
 
-  editableId(id:any,proyecto: Proyecto[]){
-    this.editableProyecto = proyecto;
-    this.editId = id;    
+  editableId(id:any,proyecto: Proyecto){
+    const proyec= proyecto;
+    /*
+    var proyecto = this.editableProyecto;
+    proyecto = this.proyectos.filter((proyec:any)=>proyec.id==id);*/
+    this.editId = id;
+    
+         
+     /* Cargar el modal con los datos */
+     this.newDescripcionProject = proyec.descripcionProject;
+     this.newFechaProject = proyec.fechaProject;
+     this.newImg_Project = proyec.img_Project;
+     this.newNombreProject = proyec.nombreProject;
+     this.newPuestoProject = proyec.puestoProject;
+
+    
+      
   }
 
   //BOTON ACTUALIZAR PROYECTO
