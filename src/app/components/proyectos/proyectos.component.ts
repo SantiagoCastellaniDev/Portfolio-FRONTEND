@@ -57,22 +57,15 @@ export class ProyectosComponent implements OnInit {
   //Boton abrir modal: Capturar Id y proyecto
 
   editableId(id:any,proyecto: Proyecto){
-    const proyec= proyecto;
-    /*
-    var proyecto = this.editableProyecto;
-    proyecto = this.proyectos.filter((proyec:any)=>proyec.id==id);*/
+    const proyec= proyecto;    
     this.editId = id;
     
-         
-     /* Cargar el modal con los datos */
-     this.newDescripcionProject = proyec.descripcionProject;
-     this.newFechaProject = proyec.fechaProject;
-     this.newImg_Project = proyec.img_Project;
-     this.newNombreProject = proyec.nombreProject;
-     this.newPuestoProject = proyec.puestoProject;
-
-    
-      
+    /* Cargar el modal con los datos */
+    this.newDescripcionProject = proyec.descripcionProject;
+    this.newFechaProject = proyec.fechaProject;
+    this.newImg_Project = proyec.img_Project;
+    this.newNombreProject = proyec.nombreProject;
+    this.newPuestoProject = proyec.puestoProject;      
   }
 
   //BOTON ACTUALIZAR PROYECTO

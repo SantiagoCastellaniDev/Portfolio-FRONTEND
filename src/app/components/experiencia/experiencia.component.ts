@@ -72,9 +72,17 @@ export class ExperienciaComponent implements OnInit {
 
   //Boton abrir modal: Capturar Id y experiencia
 
-  editableId(id:any,experiencia: Experiencia[]){
-    this.editableExperiencia = experiencia;
-    this.editId = id;    
+  editableId(id:any,experiencia: Experiencia){
+    const editableExpe = experiencia;
+    this.editId = id; 
+
+    /* Cargar el modal con los datos */
+    this.newPuestoEx = editableExpe.puestoEx;
+    this.newFechaEx = editableExpe.fechaEx;
+    this.newEmpresaEx = editableExpe.empresaEx;
+    this.newDescripcionEx = editableExpe.descripcionEx;
+    this.newImg_LogoEx = editableExpe.img_LogoEx;
+          
   }
 
   //BOTON ACTUALIZAR EXPERIENCIA

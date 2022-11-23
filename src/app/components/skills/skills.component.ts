@@ -89,9 +89,16 @@ export class SkillsComponent implements OnInit {
 
   //Boton abrir modal: Capturar Id y experiencia
 
-  editableId(id:any,skill: Skill[]){
-    this.editableSkill = skill;
-    this.editId = id;    
+  editableId(id:any,skill: Skill){
+    const editableSkill = skill;
+    this.editId = id;
+    
+    /* Cargar el modal con los datos */
+    this.newNombreSkill = editableSkill.nombreSkill;
+    this.newNivelSkill = editableSkill.nivelSkill;
+    this.newPorcentajeSkill = editableSkill.porcentajeSkill;
+    this.newColorSkill = editableSkill.colorSkill;
+    this.newImg_Skill = editableSkill.img_Skill;    
   }
 
   //BOTON ACTUALIZAR EXPERIENCIA

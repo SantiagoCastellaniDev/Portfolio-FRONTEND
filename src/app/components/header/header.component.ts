@@ -52,12 +52,16 @@ export class HeaderComponent implements OnInit {
 
   //Boton abrir modal: Capturar Id y experiencia
 
-  editableId(id:any,persona: Persona[]){
-    this.editablePersona = persona;
-    
-    this.editId = id;
-    console.log(id);
-    console.log(this.editablePersona);    
+  editableId(id:any,persona: Persona){
+    const editablePersona = persona;
+    this.editId = id; 
+
+    this.newNombre = editablePersona.nombre;
+    this.newApellido = editablePersona.apellido;
+    this.newPresentacion = editablePersona.presentacion;
+    this.newDescripcion = editablePersona.descripcion;
+    this.newImg_Banner = editablePersona.img_banner;
+    this.newImg_Perfil = editablePersona.img_perfil;
   }
 
   //BOTON ACTUALIZAR EXPERIENCIA

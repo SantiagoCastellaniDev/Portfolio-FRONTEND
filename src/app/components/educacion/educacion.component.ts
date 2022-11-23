@@ -66,9 +66,18 @@ export class EducacionComponent implements OnInit {
 
   //Boton abrir modal: Capturar Id y experiencia
 
-  editableId(id:any,educacion: Educacion[]){
-    this.editableEducacion = educacion;
-    this.editId = id;    
+  editableId(id:any,educacion: Educacion){
+    const editableEdu = educacion;
+    this.editId = id;  
+    
+    /* Mostrar datos en el modal */
+
+    this.newtituloEdu = editableEdu.tituloEdu;
+    this.newfechaEdu = editableEdu.fechaEdu;
+    this.newinstitucionEdu = editableEdu.institucionEdu;
+    this.newdescripcionEdu = editableEdu.descripcionEdu;
+    this.newimg_LogoEdu = editableEdu.img_LogoEdu;
+
   }
 
   //BOTON ACTUALIZAR EXPERIENCIA
